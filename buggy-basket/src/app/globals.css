@@ -3,8 +3,18 @@
 
 
 :root {
+    /* Color Variables */
   --background: #ffffff;
   --foreground: #171717;
+  --main-blue: #B4E1FF;
+  --accent-yellow: #F0C808;
+  --accent-pink: #FF6B6B;
+  --text-black:#0D1821;
+ 
+
+  /* Font Variables */
+  --display-font: 'Lilita One', cursive;
+  --body-font: 'Inter', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
