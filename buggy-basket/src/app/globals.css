@@ -13,6 +13,18 @@
   /* Font Variables */
   --display-font: 'Lilita One', cursive;
   --body-font: 'Inter', sans-serif;
+
+    /* Font Sizes */
+  --font-size-h1: 48pt;
+  --font-size-h2: 40pt;
+  --font-size-h3: 32pt;
+  --font-size-body: 24pt;
+  --font-size-link: 24pt;
+  --font-size-error: 24pt;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 }
 
 html,
