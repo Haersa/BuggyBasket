@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { X } from 'lucide-react';
 import Link from 'next/link';
 
-export default function RegisterModal({ onClose }) {
+export default function RegisterModal({ onClose, onSwitchToLogin }) {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -74,9 +74,9 @@ export default function RegisterModal({ onClose }) {
         </div>
 
         <p className="modal-subtitle">
-          Already have an account?{' '}
-          <button onClick={onClose}>Log in</button>
-        </p>
+  Already have an account?{' '}
+  <button onClick={onSwitchToLogin}>Log in</button>
+</p>
 
         <form onSubmit={handleSubmit} className="modal-form">
           <div className="modal-field">

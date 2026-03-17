@@ -180,6 +180,65 @@ a {
   display: none;
 }
 
+
+/* Profile icon */
+
+.navbar-profile-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  z-index: 300;
+  animation: fadeSlideDown 0.15s ease;
+  padding-top: 0.5rem;
+}
+
+.profile-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #444;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.profile-dropdown-item:hover {
+  background: #f5f5f5;
+  color: #0D1821;
+}
+
+.profile-dropdown-logout {
+  color: #EF626C;
+}
+
+.profile-dropdown-logout:hover {
+  background: #fff5f5;
+  color: #EF626C;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .navbar {
@@ -440,7 +499,7 @@ a {
   color: #0D1821;
 }
 
-/* Register Modal */
+/* Auth Modal */
 
 .modal-overlay {
   position: fixed;
@@ -621,4 +680,88 @@ a {
 .modal-terms a {
   color: #0D1821;
   text-decoration: underline;
+}
+
+/* Login Modal */
+
+.login-dropdown {
+  position: fixed;
+  top: 4.25rem;
+  right: 2.5rem;
+  width: 320px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  z-index: 300;
+  animation: fadeSlideDown 0.2s ease;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.login-dropdown-title {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.1rem;
+  color: #0D1821;
+}
+
+.login-dropdown-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.modal-forgot {
+  font-size: 0.78rem;
+  color: #888;
+  text-decoration: none;
+  margin-top: 0.25rem;
+  transition: color 0.15s;
+}
+
+.modal-forgot:hover {
+  color: #0D1821;
+}
+
+.login-dropdown-register {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+}
+
+.login-dropdown-register button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: #0D1821;
+  text-decoration: underline;
+  font-size: 0.8rem;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .login-dropdown {
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+    top: 4.5rem;
+  }
 }
