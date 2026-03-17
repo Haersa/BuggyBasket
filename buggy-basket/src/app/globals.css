@@ -1,8 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Inter:wght@400;600;700&display=swap');
 
 :root {
+    /* Color Variables */
   --background: #ffffff;
   --foreground: #171717;
+  --main-blue: #B4E1FF;
+  --accent-yellow: #F0C808;
+  --accent-pink: #FF6B6B;
+  --text-black:#0D1821;
+ 
+
+  /* Font Variables */
+  --display-font: 'Lilita One', cursive;
+  --body-font: 'Inter', sans-serif;
+
+    /* Font Sizes */
+  --font-size-h1: 48pt;
+  --font-size-h2: 40pt;
+  --font-size-h3: 32pt;
+  --font-size-body: 24pt;
+  --font-size-link: 24pt;
+  --font-size-error: 24pt;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 }
 
 html,
