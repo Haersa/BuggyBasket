@@ -2,17 +2,17 @@ import { NextResponse } from 'next/server';
 import db from '../../../../lib/db';
 import bcrypt from 'bcryptjs';
 
-// GET all users
-export async function GET() {
-  const users = db.prepare('SELECT id, email, created_at FROM users').all();
-  return NextResponse.json(users);
-}
-
-// POST - register a new user
 export async function POST(request) {
   const { email, password } = await request.json();
 
-  // Hash the password with a salt round of 10
+  // Check if email already exists
+  const existingUser = db.prepare('SELECT id FROM users WHERE email = ?').get(email);
+
+  if (existingUser) {
+    return NextResponse.json({ error: 'An account with this email already exists.' }, { status: 409 });
+  }
+
+  // Hash the password
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const stmt = db.prepare(`
