@@ -8,7 +8,7 @@ export default function Footer() {
 
         <div className="footer-brand">
           <span className="footer-logo">Buggy Basket</span>
-          <p className="footer-tagline">The smarter way to shop for baby.</p>
+          <p className="footer-tagline">For your baby's needs.</p>
         </div>
 
         <div className="footer-links">
@@ -34,7 +34,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
       <div className="footer-payments">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="payment-icon" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" className="payment-icon" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="payment-icon" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" className="payment-icon" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" className="payment-icon" />
