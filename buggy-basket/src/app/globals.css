@@ -686,7 +686,7 @@ a {
 
 .modal-terms {
   font-size: 0.78rem;
-  color: var(--text-light);
+  color: var(--text-black);
   text-align: center;
   line-height: 1.6;
 }
@@ -744,19 +744,17 @@ a {
 
 .modal-forgot {
   font-size: 0.78rem;
-  color: var(--text-light);
+  color: var(--text-black);
   text-decoration: none;
   margin-top: 0.25rem;
   transition: color 0.15s;
 }
 
-.modal-forgot:hover {
-  color: var(--text-black);
-}
+
 
 .login-dropdown-register {
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: var(--text-black);
   text-align: center;
 }
 
