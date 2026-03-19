@@ -807,9 +807,9 @@ a {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0.0) 100%
+    rgba(13, 24, 33, 0.65) 0%,
+    rgba(13, 24, 33, 0.3) 50%,
+    rgba(13, 24, 33, 0.0) 100%
   );
   z-index: 1;
 }
@@ -840,7 +840,7 @@ a {
 
 .hero-subtitle {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--background);
   line-height: 1.7;
   margin-bottom: 2rem;
   max-width: 480px;
@@ -885,7 +885,7 @@ a {
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* ── Featured Products ── */
+/*  Featured Products */
 .featured {
   padding: 4rem 2.5rem;
   background: var(--background);
@@ -923,7 +923,7 @@ a {
   overflow-x: auto;
 }
 
-/* ── Product Card ── */
+/*  Product Card */
 .product-card {
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
@@ -1002,28 +1002,35 @@ a {
 }
 
 /* Swiper JS style override */
+
 .featured-swiper {
-  padding-bottom: 3rem !important;
+  padding-bottom: 4rem !important;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
+  top: auto !important;
+  bottom: 0 !important;
   color: var(--text-black) !important;
+  transform: scale(0.7) !important;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: var(--accent-yellow) !important;
+.swiper-button-prev {
+  left: auto !important;
+  right: 3.25rem !important;
 }
 
-.swiper-pagination-bullet {
-  background: var(--text-black) !important;
+.swiper-button-next {
+  right: 0 !important;
 }
 
-.swiper-pagination-bullet-active {
-  background: var(--accent-yellow) !important;
+.swiper-pagination {
+  display: none !important;
 }
 
+.featured-swiper {
+  padding-bottom: 4rem !important;
+}
 @media (max-width: 768px) {
   .hero {
     padding: 2rem 1.5rem;
