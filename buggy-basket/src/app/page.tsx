@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { Truck, RotateCcw, ShieldCheck, Star } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -35,6 +36,27 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+{/* Trust Bar */}
+<div className="trust-bar">
+  <div className="trust-item">
+    <Truck size={20} />
+    <span>Free Delivery Over £50</span>
+  </div>
+  <div className="trust-item">
+    <RotateCcw size={20} />
+    <span>30 Day Returns</span>
+  </div>
+  <div className="trust-item">
+    <ShieldCheck size={20} />
+    <span>Secure Checkout</span>
+  </div>
+  <div className="trust-item">
+    <Star size={20} />
+    <span>Trusted by 500+ Families</span>
+  </div>
+</div>
+
 
       {/* Featured Products */}
       <section className="featured">

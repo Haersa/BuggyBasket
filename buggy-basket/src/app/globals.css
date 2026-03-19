@@ -885,6 +885,48 @@ a {
   background: rgba(255, 255, 255, 0.25);
 }
 
+/* Trust Bar */
+
+/* ── Trust Bar ── */
+.trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem 2.5rem;
+  background: var(--text-black);
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--background);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.trust-item svg {
+  color: var(--accent-yellow);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .trust-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .trust-item {
+    font-size: 0.8rem;
+  }
+}
+
+
 /*  Featured Products */
 .featured {
   padding: 4rem 2.5rem;
