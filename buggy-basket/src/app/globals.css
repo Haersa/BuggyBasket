@@ -745,7 +745,7 @@ a {
 .modal-forgot {
   font-size: 0.78rem;
   color: var(--text-black);
-  text-decoration: none;
+  text-decoration: underline;
   margin-top: 0.25rem;
   transition: color 0.15s;
 }
