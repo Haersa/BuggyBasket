@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 export default function RegisterModal({ onClose, onSwitchToLogin }) {
   const [formData, setFormData] = useState({
@@ -11,7 +12,6 @@ export default function RegisterModal({ onClose, onSwitchToLogin }) {
     confirmPassword: '',
     marketing: false,
   });
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -24,15 +24,14 @@ export default function RegisterModal({ onClose, onSwitchToLogin }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
 
     if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match.');
+      toast.error('Passwords do not match.');
       return;
     }
 
     if (formData.password.length < 8) {
-      setError('Password must be at least 8 characters.');
+      toast.error('Password must be at least 8 characters.');
       return;
     }
 
@@ -51,12 +50,13 @@ export default function RegisterModal({ onClose, onSwitchToLogin }) {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || 'Something went wrong.');
+        toast.error(data.error || 'Something went wrong.');
       } else {
+        toast.success('Account created successfully!');
         onClose();
       }
     } catch (err) {
-      setError('Network error. Please try again.');
+      toast.error('Network error. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -74,9 +74,9 @@ export default function RegisterModal({ onClose, onSwitchToLogin }) {
         </div>
 
         <p className="modal-subtitle">
-  Already have an account?{' '}
-  <button onClick={onSwitchToLogin}>Log in</button>
-</p>
+          Already have an account?{' '}
+          <button onClick={onSwitchToLogin}>Log in</button>
+        </p>
 
         <form onSubmit={handleSubmit} className="modal-form">
           <div className="modal-field">
@@ -131,8 +131,6 @@ export default function RegisterModal({ onClose, onSwitchToLogin }) {
               I&apos;d like to receive updates about special news and offers via email.
             </label>
           </div>
-
-          {error && <p className="modal-error">{error}</p>}
 
           <button type="submit" className="modal-submit" disabled={loading}>
             {loading ? 'Creating Account...' : 'Create Account'}

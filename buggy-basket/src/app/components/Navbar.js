@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { ShoppingBasket, CircleUserRound, Menu, X } from 'lucide-react';
 import RegisterModal from './RegisterModal';
 import LoginModal from './LoginModal';
+import { toast } from 'react-toastify';
+
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,7 +34,8 @@ export default function Navbar() {
     localStorage.removeItem('token');
     setIsLoggedIn(false);
     setProfileOpen(false);
-    window.location.reload();
+    setMenuOpen(false);
+    toast.success('You have been logged out.');
   };
 
   return (
@@ -119,11 +122,12 @@ export default function Navbar() {
         />
       )}
       {modal === 'login' && (
-        <LoginModal
-          onClose={() => setModal(null)}
-          onSwitchToRegister={() => setModal('register')}
-        />
-      )}
+  <LoginModal
+    onClose={() => setModal(null)}
+    onSwitchToRegister={() => setModal('register')}
+    onLoginSuccess={() => setIsLoggedIn(true)}
+  />
+)}
     </>
   );
 }

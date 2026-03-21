@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
-export default function LoginModal({ onClose, onSwitchToRegister }) {
+export default function LoginModal({ onClose, onSwitchToRegister, onLoginSuccess }) {
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const ref = useRef(null);
 
@@ -25,7 +25,6 @@ export default function LoginModal({ onClose, onSwitchToRegister }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
     setLoading(true);
 
     try {
@@ -38,14 +37,15 @@ export default function LoginModal({ onClose, onSwitchToRegister }) {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || 'Something went wrong.');
+        toast.error(data.error || 'Something went wrong.');
       } else {
         localStorage.setItem('token', data.token);
+        toast.success('Welcome back!');
+        onLoginSuccess();
         onClose();
-        window.location.reload();
       }
     } catch (err) {
-      setError('Network error. Please try again.');
+      toast.error('Network error. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -80,8 +80,6 @@ export default function LoginModal({ onClose, onSwitchToRegister }) {
           />
           <a href="/forgot-password" className="modal-forgot">Forgot password?</a>
         </div>
-
-        {error && <p className="modal-error">{error}</p>}
 
         <button type="submit" className="modal-submit" disabled={loading}>
           {loading ? 'Logging in...' : 'Log In'}
