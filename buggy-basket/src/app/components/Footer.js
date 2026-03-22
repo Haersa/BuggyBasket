@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { Instagram, Facebook } from 'lucide-react';
+import { FaTiktok } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -8,7 +9,18 @@ export default function Footer() {
 
         <div className="footer-brand">
           <span className="footer-logo">Buggy Basket</span>
-          <p className="footer-tagline">For your baby's needs.</p>
+          <p className="footer-tagline">The smarter way to shop for baby.</p>
+          <div className="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="footer-social-link">
+              <Instagram size={18} />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="footer-social-link">
+              <Facebook size={18} />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="footer-social-link">
+              <FaTiktok size={16} />
+            </a>
+          </div>
         </div>
 
         <div className="footer-links">
@@ -33,13 +45,13 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-      <div className="footer-payments">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" className="payment-icon" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="payment-icon" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" className="payment-icon" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" className="payment-icon" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="payment-icon" />
-</div>
+        <div className="footer-payments">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_(2021%E2%80%93present).svg" alt="Visa" className="payment-icon" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="payment-icon" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" className="payment-icon" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" className="payment-icon" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="payment-icon" />
+        </div>
         <p>&copy; {new Date().getFullYear()} Buggy Basket. All rights reserved.</p>
       </div>
     </footer>

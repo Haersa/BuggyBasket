@@ -114,13 +114,13 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-
       {modal === 'register' && (
-        <RegisterModal
-          onClose={() => setModal(null)}
-          onSwitchToLogin={() => setModal('login')}
-        />
-      )}
+  <RegisterModal
+    onClose={() => setModal(null)}
+    onSwitchToLogin={() => setModal('login')}
+    onLoginSuccess={() => setIsLoggedIn(true)}
+  />
+)}
       {modal === 'login' && (
   <LoginModal
     onClose={() => setModal(null)}

@@ -5,7 +5,7 @@ import { X } from 'lucide-react';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 
-export default function RegisterModal({ onClose, onSwitchToLogin }) {
+export default function RegisterModal({ onClose, onSwitchToLogin, onLoginSuccess }) {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -38,7 +38,25 @@ export default function RegisterModal({ onClose, onSwitchToLogin }) {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/users/register', {
+      const registerRes = await fetch('/api/users/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+          newsletter: formData.marketing,
+        }),
+      });
+
+      const registerData = await registerRes.json();
+
+      if (!registerRes.ok) {
+        toast.error(registerData.error || 'Something went wrong.');
+        return;
+      }
+
+      // Auto login after successful registration
+      const loginRes = await fetch('/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -47,12 +65,15 @@ export default function RegisterModal({ onClose, onSwitchToLogin }) {
         }),
       });
 
-      const data = await res.json();
+      const loginData = await loginRes.json();
 
-      if (!res.ok) {
-        toast.error(data.error || 'Something went wrong.');
+      if (loginRes.ok) {
+        localStorage.setItem('token', loginData.token);
+        toast.success('Welcome to Buggy Basket!');
+        onLoginSuccess();
+        onClose();
       } else {
-        toast.success('Account created successfully!');
+        toast.success('Account created! Please log in.');
         onClose();
       }
     } catch (err) {
@@ -139,7 +160,7 @@ export default function RegisterModal({ onClose, onSwitchToLogin }) {
           <p className="modal-terms">
             By registering you agree to our{' '}
             <Link href="/privacy">Privacy Policy</Link>{' '}
-            and <Link href="/terms">Terms & Conditions</Link>.
+            and <Link href="/terms">Terms &amp; Conditions</Link>.
           </p>
         </form>
       </div>

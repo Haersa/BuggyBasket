@@ -510,6 +510,31 @@ a {
   opacity: 0.7;
 }
 
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  transition: all 0.15s;
+}
+
+.footer-social-link:hover {
+  background: var(--text-black);
+  color: var(--background);
+  border-color: var(--text-black);
+}
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
