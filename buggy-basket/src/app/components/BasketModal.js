@@ -18,7 +18,6 @@ export default function BasketModal() {
   };
 
   if (!isOpen) return null;
-  console.log('basket items:', items);
   return (
     <>
       <div className="modal-overlay" onClick={() => setIsOpen(false)} />
@@ -66,6 +65,19 @@ export default function BasketModal() {
                 </div>
               ))}
             </div>
+
+            <div className="basket-payment-btns">
+  <button className="basket-payment-btn basket-apple-pay">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" height="18" />
+    <span>Pay</span>
+  </button>
+  <button className="basket-payment-btn basket-google-pay">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" height="22" />
+  </button>
+  <button className="basket-payment-btn basket-klarna">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Klarna_Payment_Badge.svg" alt="Klarna" height="22" />
+  </button>
+</div>
 
             <div className="basket-footer">
               <div className="basket-total">
