@@ -1,23 +1,40 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Truck, RotateCcw, ShieldCheck, Star } from 'lucide-react';
+import { useBasket } from './context/BasketContext';
+import { toast } from 'react-toastify';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const placeholderProducts = [
-  { id: 1, name: 'Classic Pram Basket', price: '£29.99', tag: 'Best Seller' },
-  { id: 2, name: 'Deluxe Storage Basket', price: '£39.99', tag: 'New' },
-  { id: 3, name: 'Compact Carry Basket', price: '£24.99', tag: null },
-  { id: 4, name: 'Premium Wicker Basket', price: '£49.99', tag: 'New' },
-  { id: 5, name: 'Travel Lite Basket', price: '£34.99', tag: null },
-  { id: 6, name: 'Urban Pram Basket', price: '£44.99', tag: 'Best Seller' },
-];
-
 export default function Home() {
+  const { addItem } = useBasket();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((err) => console.error('Failed to fetch products:', err));
+  }, []);
+
+  const handleAddToBasket = async (product) => {
+    const success = await addItem(product.id, 1, {
+      name: product.name,
+      price: product.price,
+      image_url: product.image_url,
+    });
+    if (success) {
+      toast.success('Item added to basket!');
+    } else {
+      toast.error('Failed to add item to basket.');
+    }
+  };
+
   return (
     <main>
 
@@ -77,19 +94,25 @@ export default function Home() {
           }}
           className="featured-swiper"
         >
-          {placeholderProducts.map((product) => (
+          {products.map((product) => (
             <SwiperSlide key={product.id}>
               <div className="product-card">
                 <div className="product-card-image">
-                  {product.tag && (
-                    <span className="product-card-tag">{product.tag}</span>
-                  )}
+                  {product.out_of_stock ? (
+                    <span className="product-card-tag" style={{ background: '#EF626C', color: '#fff' }}>Out of Stock</span>
+                  ) : null}
                 </div>
                 <div className="product-card-body">
                   <h3 className="product-card-name">{product.name}</h3>
                   <div className="product-card-footer">
-                    <span className="product-card-price">{product.price}</span>
-                    <button className="product-card-btn">Add to Basket</button>
+                    <span className="product-card-price">£{product.price.toFixed(2)}</span>
+                    <button
+                      className="product-card-btn"
+                      onClick={() => handleAddToBasket(product)}
+                      disabled={!!product.out_of_stock}
+                    >
+                      {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
+                    </button>
                   </div>
                 </div>
               </div>

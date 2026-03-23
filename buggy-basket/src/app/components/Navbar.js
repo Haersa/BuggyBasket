@@ -6,7 +6,7 @@ import { ShoppingBasket, CircleUserRound, Menu, X } from 'lucide-react';
 import RegisterModal from './RegisterModal';
 import LoginModal from './LoginModal';
 import { toast } from 'react-toastify';
-
+import { useBasket } from '../context/BasketContext';
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,6 +14,7 @@ export default function Navbar() {
   const [modal, setModal] = useState(null);
   const [profileOpen, setProfileOpen] = useState(false);
   const profileRef = useRef(null);
+  const { itemCount, setIsOpen } = useBasket();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -79,15 +80,17 @@ export default function Navbar() {
               <button className="navbar-register" onClick={() => setModal('register')}>Register</button>
             </>
           )}
-          <Link href="/basket" className="navbar-basket">
+          <button className="navbar-basket" onClick={() => setIsOpen(true)}>
             <ShoppingBasket size={22} />
-          </Link>
+            {itemCount > 0 && <span className="basket-badge">{itemCount}</span>}
+          </button>
         </div>
 
         <div className="navbar-mobile-right">
-          <Link href="/basket" className="navbar-basket">
+          <button className="navbar-basket" onClick={() => setIsOpen(true)}>
             <ShoppingBasket size={22} />
-          </Link>
+            {itemCount > 0 && <span className="basket-badge">{itemCount}</span>}
+          </button>
           <button className="navbar-burger" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -114,20 +117,21 @@ export default function Navbar() {
           </div>
         )}
       </nav>
+
       {modal === 'register' && (
-  <RegisterModal
-    onClose={() => setModal(null)}
-    onSwitchToLogin={() => setModal('login')}
-    onLoginSuccess={() => setIsLoggedIn(true)}
-  />
-)}
+        <RegisterModal
+          onClose={() => setModal(null)}
+          onSwitchToLogin={() => setModal('login')}
+          onLoginSuccess={() => setIsLoggedIn(true)}
+        />
+      )}
       {modal === 'login' && (
-  <LoginModal
-    onClose={() => setModal(null)}
-    onSwitchToRegister={() => setModal('register')}
-    onLoginSuccess={() => setIsLoggedIn(true)}
-  />
-)}
+        <LoginModal
+          onClose={() => setModal(null)}
+          onSwitchToRegister={() => setModal('register')}
+          onLoginSuccess={() => setIsLoggedIn(true)}
+        />
+      )}
     </>
   );
 }
