@@ -25,9 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             position="top-center"
             autoClose={3000}
             hideProgressBar={false}
-            closeOnClick
-            pauseOnHover
-            draggable
+            draggable = {false}
             theme="light"
           />
         </BasketProvider>
