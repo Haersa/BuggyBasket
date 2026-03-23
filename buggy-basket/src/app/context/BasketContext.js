@@ -71,9 +71,6 @@ export function BasketProvider({ children }) {
   }, [fetchBasket]);
 
   const addItem = async (product_id, quantity = 1, productDetails = null) => {
-    console.log('token:', localStorage.getItem('token'));
-    console.log('isLoggedIn:', isLoggedIn());
-
     if (!isLoggedIn()) {
       const guestBasket = getGuestBasket();
       const existing = guestBasket.find((i) => i.product_id === product_id);
@@ -103,8 +100,6 @@ export function BasketProvider({ children }) {
       body: JSON.stringify({ product_id, quantity }),
     });
 
-    console.log('basket API response status:', res.status);
-
     if (res.ok) {
       await fetchBasket();
       return true;
@@ -120,7 +115,7 @@ export function BasketProvider({ children }) {
       return;
     }
 
-    const res = await fetch(`/api/basket/${id}`, {
+    const res = await fetch(`/api/basket/item?itemId=${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
@@ -138,7 +133,7 @@ export function BasketProvider({ children }) {
       return;
     }
 
-    const res = await fetch(`/api/basket/${id}`, {
+    const res = await fetch(`/api/basket/item?itemId=${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

@@ -13,13 +13,12 @@ function getUserFromToken(request) {
   }
 }
 
-// GET basket items for logged in user
 export async function GET(request) {
   const user = getUserFromToken(request);
   if (!user) return NextResponse.json({ error: 'Unauthorised.' }, { status: 401 });
 
   const items = db.prepare(`
-    SELECT basket.id, basket.quantity, products.name, products.price, 
+    SELECT basket.id, basket.quantity, products.name, products.price,
            products.image_url, products.out_of_stock, products.id as product_id
     FROM basket
     JOIN products ON basket.product_id = products.id
@@ -29,14 +28,12 @@ export async function GET(request) {
   return NextResponse.json(items);
 }
 
-// POST - add item to basket
 export async function POST(request) {
   const user = getUserFromToken(request);
   if (!user) return NextResponse.json({ error: 'Unauthorised.' }, { status: 401 });
 
   const { product_id, quantity } = await request.json();
 
-  // Check if item already in basket
   const existing = db.prepare('SELECT id, quantity FROM basket WHERE user_id = ? AND product_id = ?').get(user.id, product_id);
 
   if (existing) {
@@ -48,7 +45,6 @@ export async function POST(request) {
   return NextResponse.json({ success: true }, { status: 201 });
 }
 
-// DELETE - clear entire basket
 export async function DELETE(request) {
   const user = getUserFromToken(request);
   if (!user) return NextResponse.json({ error: 'Unauthorised.' }, { status: 401 });
