@@ -39,6 +39,17 @@ export default function About() {
           </div>
         </div>
 
+        <div className="about-section reverse">
+          <div className="about-text">
+            <h2>Where we're located</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam maiores, voluptate accusantium aut voluptas amet eum
+              doloremque iure, dolore eos cum architecto, vitae quam iste. Facere ullam quas cupiditate commodi.</p>
+          </div>
+          <div className="about-image">
+            <div className="image-placeholder">Image</div>
+          </div>
+        </div>
+
       </div>
     </div>
   )
