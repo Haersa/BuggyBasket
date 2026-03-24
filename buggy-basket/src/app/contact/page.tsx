@@ -5,13 +5,6 @@ export default function Contact() {
         <h1 className="contact-title">Contact Us</h1>
         <div className="contact-section">
 
-          <div className="contact-map">
-            <iframe src="https://www.google.com/maps?q=Thurso&output=embed"
-              width="100%" height="100%"
-              style={{ border: 0, borderRadius: "12px" }}
-              loading="lazy"></iframe>
-          </div>
-
           <div className="contact-page">
             <div className="contact-info">
               <h2>Get in touch</h2>
@@ -38,9 +31,13 @@ export default function Contact() {
                 <input type="text" className="modal-input" />
               </div>
               <button className="modal-submit">Submit</button>
-
             </form>
-
+          </div>
+          <div className="contact-map">
+            <iframe src="https://www.google.com/maps?q=Thurso&output=embed"
+              width="100%" height="100%"
+              style={{ border: 0, borderRadius: "12px" }}
+              loading="lazy"></iframe>
           </div>
 
         </div>
