@@ -1223,7 +1223,6 @@ a {
 
 .contact-info {
   padding: 1.5rem;
-  background: var(--surface-input);
   border: 1 solid var(--border-color);
   border-radius: 0.75rem;
 }
@@ -1232,38 +1231,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: var(--surface-input);
   padding: 1.5rem;
-}
-
-.contact-form input,
-.contact-form text-area {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border-input);
-  border-radius: 0.375rem;
-  font-family: var(--body-font);
-}
-
-.contact-form text-area {
-  margin-bottom: 1rem;
-  min-height: 120px;
-  resize: vertical;
-}
-
-.contact-form button {
-  background: var(--text-black);
-  color: var(--background);
-  columns: var(--background);
-  padding: 0.75rem;
-  border: none;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.contact-form button:hover {
-  background: var(--accent-yellow);
-  color: var(--text-black);
 }
 
 /*contact-mobile*/

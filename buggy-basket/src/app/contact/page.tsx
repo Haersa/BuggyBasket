@@ -25,10 +25,20 @@ export default function Contact() {
 
             <form className="contact-form">
               <h2>Have an enquiry?</h2>
-              <input type="text" placeholder="Your Name" />
-              <input type="text" placeholder="Your Email" />
-              <textarea placeholder="Your Message"></textarea>
-              <button type="submit">Send Message</button>
+              <div className="modal-field">
+                <label className="modal-label">Name</label>
+                <input type="text" className="modal-input" />
+              </div>
+              <div className="modal-field">
+                <label className="modal-label">Email</label>
+                <input type="text" className="modal-input" />
+              </div>
+              <div className="modal-field">
+                <label className="modal-label">Message</label>
+                <input type="text" className="modal-input" />
+              </div>
+              <button className="modal-submit">Submit</button>
+
             </form>
 
           </div>
