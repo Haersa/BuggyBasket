@@ -24,7 +24,7 @@ export default function Contact() {
             </div>
 
             <form className="contact-form">
-              <h2>Get in touch</h2>
+              <h2>Have an enquiry?</h2>
               <input type="text" placeholder="Your Name" />
               <input type="text" placeholder="Your Email" />
               <textarea placeholder="Your Message"></textarea>
