@@ -36,10 +36,11 @@ export default function Navbar() {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('guest_basket');
     setIsLoggedIn(false);
     setProfileOpen(false);
     setMenuOpen(false);
-    toast.success('You have been logged out');
+    toast.success('You have been logged out.');
     router.push('/');
   };
 
