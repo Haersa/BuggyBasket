@@ -7,6 +7,7 @@ import RegisterModal from './RegisterModal';
 import LoginModal from './LoginModal';
 import { toast } from 'react-toastify';
 import { useBasket } from '../context/BasketContext';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,13 +32,18 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
+  const router = useRouter();
+
   const handleLogout = () => {
     localStorage.removeItem('token');
     setIsLoggedIn(false);
     setProfileOpen(false);
     setMenuOpen(false);
-    toast.success('You have been logged out.');
+    toast.success('You have been logged out');
+    router.push('/');
   };
+
+  
 
   return (
     <>
