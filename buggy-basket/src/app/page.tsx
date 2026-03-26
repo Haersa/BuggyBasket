@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+
 export default function Home() {
   const { addItem } = useBasket();
   const [products, setProducts] = useState([]);
