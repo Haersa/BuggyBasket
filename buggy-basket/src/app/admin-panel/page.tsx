@@ -16,7 +16,7 @@ export default function About() {
               <ul>
                 <li><a href="/admin"><LayoutDashboard />Dashboard</a></li>
                 <li><a href="/admin/products"><PackageSearch />Manage Products</a></li>
-                <li><a href="/admin/add-product"><PackagePlus />Add Product</a></li>
+                <li><a href="/admin-panel/admin-add-new-product"><PackagePlus />Add Product</a></li>
                 <li><a href="/admin/analytics"><BadgePoundSterling />Sales Analytics</a></li>
                 <li><a href="/admin/manage-users"><UserRoundCog />Manage Users</a></li>
                 <li><a href="/admin/user-audit"><UserSearch />User Audit</a></li>
@@ -38,7 +38,7 @@ export default function About() {
                   <a href="/admin/products">
                     <li className="button-grid-important"><PackageSearch />Manage Products</li>
                   </a>
-                  <a href="/admin/products/new">
+                  <a href="/admin-panel/admin-add-new-product">
                     <li><PackagePlus />Add New Products</li>
                   </a>
                   <a href="/admin/analytics">
