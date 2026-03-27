@@ -1360,6 +1360,10 @@ a {
   overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
   background: var(--background);
+  /* Temporary background image for development, in the final build this should be replaced by a dynamic image source */
+  background-image: url('/temp-images/1-Cover.jpg');
+  background-size: fill;
+  background-position: center;
 }
 
 .product-card:hover {
@@ -1370,7 +1374,6 @@ a {
 .product-card-image {
   width: 100%;
   height: 200px;
-  background: var(--surface-hover);
   position: relative;
 }
 
