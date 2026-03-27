@@ -1362,7 +1362,7 @@ a {
   background: var(--background);
   /* Temporary background image for development, in the final build this should be replaced by a dynamic image source */
   background-image: url('/temp-images/1-Cover.jpg');
-  background-size: fill;
+  background-size: cover;
   background-position: center;
 }
 
@@ -1396,6 +1396,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.23);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.43);
 }
 
 .product-card-name {
