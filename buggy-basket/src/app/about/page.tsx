@@ -1,11 +1,12 @@
 export default function About() {
   return (
     <div className="page">
+      <br />
+      <h1 className="about-title">About Us</h1>
       <div className="about-image">
         <div className="image-placeholder">Image</div>
       </div>
       <div className="about-container">
-        <h1 className="about-title">About Us</h1>
         <div className="about-section">
           <div className="about-cards">
             <div className="about-card">

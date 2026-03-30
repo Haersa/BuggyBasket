@@ -1150,12 +1150,6 @@ a {
   overflow: hidden;
 }
 
-.about-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .image-placeholder {
   width: 100%;
   height: 350px;
