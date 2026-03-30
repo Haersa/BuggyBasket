@@ -17,7 +17,7 @@ export default function Contact() {
               <p className="modal-text">Send a message</p>
               <h2>Have an enquiry?</h2>
               <div className="modal-field">
-                <label className="modal-label">Firstname</label>
+                <label className="modal-label">First name</label>
                 <input type="text" className="modal-input" />
               </div>
               <div className="modal-field">
