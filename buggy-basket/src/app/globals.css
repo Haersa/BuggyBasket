@@ -2948,3 +2948,39 @@ a {
     gap: 0.75rem;
   }
 }
+
+
+
+
+/*Styles for legalities pages in footer (Privacy Policy Terms & Conditions Refunds & Returns)*/
+
+
+.legalities-section{
+
+  padding: 5rem;
+  max-width: 980px;
+  margin: 0 auto;
+
+}
+
+.legalities-section li{
+
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.legalities-section h2,
+.legalities-section h3,
+.legalities-section h4{
+
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+
+
+/*Legal pages spacing*/
+.legal-spacing {
+  
+  margin-bottom: 2rem;
+}
