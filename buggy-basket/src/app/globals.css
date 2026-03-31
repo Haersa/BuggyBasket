@@ -1105,9 +1105,19 @@ a {
 
 .about-container {
   padding: 3rem 2.5rem;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   font-family: var(--body-font);
+}
+
+.about-page {
+  line-height: 1.7rem;
+}
+
+.about-page::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .about-title {
@@ -1116,17 +1126,6 @@ a {
   font-size: 2rem;
   margin-bottom: 3rem;
   color: var(--text-black);
-}
-
-.about-section {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  margin-bottom: 5rem;
-}
-
-.about-section.reverse {
-  flex-direction: row-reverse;
 }
 
 .about-text {
@@ -1144,10 +1143,9 @@ a {
 }
 
 .about-image {
-  width: 100%;
-  margin-bottom: 1rem;
-  border-radius: 1rem;
-  overflow: hidden;
+  float: right;
+  width: 400px;
+  margin: 0 0 1.5rem 1.5rem;
 }
 
 .image-placeholder {
@@ -1162,37 +1160,13 @@ a {
   color: var(--text-light);
 }
 
-.about-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.about-card {
-  padding: 1.75rem;
-  background: var(--surface-input);
-  border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.about-card h2 {
-  margin-bottom: 0.75rem;
-}
-
-.about-card p {
-  line-height: 1.6;
-  color: var(--text-muted);
+.about-list {
+  padding: 1rem;
 }
 
 
 
 /*about page mobile*/
-@media(max-width: 1024px) {
-  .about-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 @media (max-width: 768px) {
 
@@ -1201,12 +1175,13 @@ a {
     flex-direction: column;
   }
 
-  .about-text,
-  .about-image {
+  .about-text {
     width: 100%;
   }
 
-  .about-cards {
-    grid-template-columns: 1fr;
+  .about-image {
+    width: 100%;
+    float: none;
+    margin: 0 0 1.5rem 0;
   }
 }
