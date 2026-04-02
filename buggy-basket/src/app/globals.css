@@ -1321,6 +1321,20 @@ a {
 /*contact-mobile*/
 
 @media (max-width: 768px) {
+  .contact-banner h2 {
+    padding: 1rem;
+  }
+
+  .contact-banner h1 {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .contact-banner p {
+    width: 100%;
+    padding: 1rem;
+  }
+
   .contact-section {
     flex-direction: column;
   }
@@ -1337,4 +1351,5 @@ a {
     grid-template-columns: 1fr;
     /* stack */
   }
+
 }
