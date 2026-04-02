@@ -1103,6 +1103,20 @@ a {
 
 /*about us page*/
 
+.about-banner {
+  width: 100%;
+  height: 350px;
+  background-image: linear-gradient(to right, var(--foreground), var(--text-muted));
+}
+
+.about-banner h1,
+h2 {
+  padding-top: 1rem;
+  color: #FFFFFF;
+  padding-left: 3rem;
+  width: 40%;
+}
+
 .about-container {
   padding: 3rem 2.5rem;
   max-width: 800px;

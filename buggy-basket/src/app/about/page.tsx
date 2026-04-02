@@ -2,13 +2,17 @@ export default function About() {
   return (
     <div className="page">
       <br />
+      <div className="about-banner">
+        <h1>About Us</h1>
+        <br />
+        <h2>At Buggy Basket, we believe thoughtful design can transform everyday parenting.</h2>
+      </div>
       <div className="about-container">
-        <h1 className="about-title">About Us</h1>
         <div className="about-page">
           <div className="about-image">
             <div className="image-placeholder">Image</div>
           </div>
-          <h2>At Buggy Basket, we believe thoughtful design can transform everyday parenting.</h2>
+
           <br />
           <p>Born from real-life experience as parents of two, our journey started with a simple but persistent
             frustration — shopping with a buggy should be easy, yet it rarely is. Limited storage, awkwardly balanced bags,
