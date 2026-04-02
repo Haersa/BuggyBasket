@@ -1189,19 +1189,15 @@ a {
   .about-banner h1 {
     width: 100%;
   }
-
+  .about-container{
+    flex-direction: column-reverse
+  }
   .about-page {
     line-height: 1.7rem;
-    flex-direction: column;
   }
-
-  .about-page {
-    order: 1;
-  }
-
 
   .about-image {
-    order: 2;
+    position: static;
     width: 100%;
     margin: 0 0 1.5rem 0;
   }
