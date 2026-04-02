@@ -1178,6 +1178,18 @@ a {
 
 @media (max-width: 768px) {
 
+  .about-banner {
+    height: 550px;
+  }
+
+  .about-banner p {
+    width: 100%;
+  }
+
+  .about-banner h1 {
+    width: 100%;
+  }
+
   .about-page {
     line-height: 1.7rem;
     flex-direction: column;
