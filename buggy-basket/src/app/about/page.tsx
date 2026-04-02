@@ -3,19 +3,15 @@ export default function About() {
     <div className="page">
       <div className="about-banner">
         <h2>About Us</h2>
-        <h1>The Buggy Basket Story</h1>
+        <h1>Built for modern families <br /><span className="about-alt-color">Designed to last</span></h1>
         <p>At Buggy Basket, we believe thoughtful design can transform everyday parenting.</p>
       </div>
       <div className="about-container">
         <div className="about-page">
-          <div className="about-image">
-            <div className="image-placeholder">Image</div>
-          </div>
           <br />
           <p>Born from real-life experience as parents of two, our journey started with a simple but persistent
             frustration — shopping with a buggy should be easy, yet it rarely is. Limited storage, awkwardly balanced bags,
             and the constant challenge of managing essentials on the move made even the simplest trips feel unnecessarily difficult.</p>
-          <br />
           <br />
           <br />
           <h2>We knew there had to be a better solution.</h2>
@@ -56,6 +52,10 @@ export default function About() {
             <li>Lightweight, functional, and considered in every detail</li>
             <li>Created by parents, designed for modern family life</li>
           </ul>
+        </div>
+        <br />
+        <div className="about-image">
+          <div className="image-placeholder">Image</div>
         </div>
       </div>
     </div >
