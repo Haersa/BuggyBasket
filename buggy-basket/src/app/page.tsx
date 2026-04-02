@@ -97,27 +97,30 @@ export default function Home() {
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>
-              <div className="product-card">
-                <div className="product-card-image">
-                  {product.out_of_stock ? (
-                    <span className="product-card-tag" style={{ background: '#EF626C', color: '#fff' }}>Out of Stock</span>
-                  ) : null}
-                </div>
-                <div className="product-card-body">
-                  <h3 className="product-card-name">{product.name}</h3>
-                  <div className="product-card-footer">
-                    <span className="product-card-price">£{product.price.toFixed(2)}</span>
-                    <button
-                      className="product-card-btn"
-                      onClick={() => handleAddToBasket(product)}
-                      disabled={!!product.out_of_stock}
-                    >
-                      {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
-                    </button>
-                  </div>
+            <Link href={`/shop/${product.id}`} className="product-card">
+              <div className="product-card-image">
+                {product.out_of_stock ? (
+                  <span className="product-card-tag" style={{ background: 'var(--error)', color: '#fff' }}>Out of Stock</span>
+                ) : null}
+              </div>
+              <div className="product-card-body">
+                <h3 className="product-card-name">{product.name}</h3>
+                <div className="product-card-footer">
+                  <span className="product-card-price">£{product.price.toFixed(2)}</span>
+                  <button
+                    className="product-card-btn"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleAddToBasket(product);
+                    }}
+                    disabled={!!product.out_of_stock}
+                  >
+                    {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
+                  </button>
                 </div>
               </div>
-            </SwiperSlide>
+            </Link>
+          </SwiperSlide>
           ))}
         </Swiper>
       </section>

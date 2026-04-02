@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { SlidersHorizontal, X } from 'lucide-react';
 import { useBasket } from '../context/BasketContext';
 import { toast } from 'react-toastify';
+import Link from 'next/link';
 
 const CATEGORIES = ['All', 'Newborn', 'Toddler', 'Accessories'];
 const COLOURS = ['All', 'Black', 'Brown', 'Beige', 'Grey', 'Natural'];
@@ -250,31 +251,34 @@ export default function ShopPage() {
         ) : (
           <div className="shop-grid">
             {filtered.map((product) => (
-              <div key={product.id} className="product-card">
-                <div className="product-card-image">
-                  {product.out_of_stock ? (
-                    <span className="product-card-tag" style={{ background: 'var(--error)', color: '#fff' }}>Out of Stock</span>
-                  ) : product.featured ? (
-                    <span className="product-card-tag">Featured</span>
-                  ) : null}
-                </div>
-                <div className="product-card-body">
-                  <h3 className="product-card-name">{product.name}</h3>
-                  {product.colour && (
-                    <p className="product-card-colour">{product.colour}</p>
-                  )}
-                  <div className="product-card-footer">
-                    <span className="product-card-price">£{product.price.toFixed(2)}</span>
-                    <button
-                      className="product-card-btn"
-                      onClick={() => handleAddToBasket(product)}
-                      disabled={!!product.out_of_stock}
-                    >
-                      {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <Link href={`/shop/${product.id}`} key={product.id} className="product-card">
+  <div className="product-card-image">
+    {product.out_of_stock ? (
+      <span className="product-card-tag" style={{ background: 'var(--error)', color: '#fff' }}>Out of Stock</span>
+    ) : product.featured ? (
+      <span className="product-card-tag">Featured</span>
+    ) : null}
+  </div>
+  <div className="product-card-body">
+    <h3 className="product-card-name">{product.name}</h3>
+    {product.colour && (
+      <p className="product-card-colour">{product.colour}</p>
+    )}
+    <div className="product-card-footer">
+      <span className="product-card-price">£{product.price.toFixed(2)}</span>
+      <button
+        className="product-card-btn"
+        onClick={(e) => {
+          e.preventDefault();
+          handleAddToBasket(product);
+        }}
+        disabled={!!product.out_of_stock}
+      >
+        {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
+      </button>
+    </div>
+  </div>
+</Link>
             ))}
           </div>
         )}
