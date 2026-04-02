@@ -1109,19 +1109,37 @@ a {
   background-image: linear-gradient(to right, var(--foreground), var(--text-muted));
 }
 
-.about-banner h1,
-h2 {
-  padding-top: 1rem;
-  color: #FFFFFF;
-  padding-left: 3rem;
-  width: 40%;
-}
-
 .about-container {
   padding: 3rem 2.5rem;
   max-width: 800px;
   margin: 0 auto;
   font-family: var(--body-font);
+}
+
+.about-banner h1 {
+  font-family: var(--display-font);
+  color: var(--background);
+  padding: 1rem;
+  padding-left: 3rem;
+  font-size: 64px;
+  width: 40%;
+}
+
+.about-banner p {
+  font-family: var(--body-font);
+  color: var(--text-faint);
+  width: 25%;
+  padding-left: 3rem;
+}
+
+.about-banner h2 {
+  padding-top: 2rem;
+  padding-left: 3rem;
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.1em;
+  color: var(--accent-yellow);
+  text-transform: uppercase;
 }
 
 .about-page {
@@ -1140,20 +1158,6 @@ h2 {
   font-size: 2rem;
   margin-bottom: 3rem;
   color: var(--text-black);
-}
-
-.about-text {
-  flex: 1;
-  padding: 2rem;
-
-}
-
-.about-text h2 {
-  margin-bottom: 1rem;
-}
-
-.about-text p {
-  line-height: 1.7;
 }
 
 .about-image {
@@ -1178,7 +1182,9 @@ h2 {
   padding: 1rem;
 }
 
-
+.about-divs {
+  border-bottom: 1px solid #000000;
+}
 
 /*about page mobile*/
 
