@@ -9,6 +9,8 @@ export default function About() {
       <div className="about-container">
         <div className="about-page">
           <br />
+          <h2>The beginning</h2>
+          <br />
           <p>Born from real-life experience as parents of two, our journey started with a simple but persistent
             frustration — shopping with a buggy should be easy, yet it rarely is. Limited storage, awkwardly balanced bags,
             and the constant challenge of managing essentials on the move made even the simplest trips feel unnecessarily difficult.</p>

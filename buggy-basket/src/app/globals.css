@@ -1183,7 +1183,13 @@ a {
     flex-direction: column;
   }
 
+  .about-page {
+    order: 1;
+  }
+
+
   .about-image {
+    order: 2;
     width: 100%;
     margin: 0 0 1.5rem 0;
   }
