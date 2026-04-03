@@ -6,10 +6,28 @@ export default function About() {
         <h1>Built for modern families <br /><span className="about-alt-color">Designed to last</span></h1>
         <p>At Buggy Basket, we believe thoughtful design can transform everyday parenting.</p>
       </div>
+      <div className="about-ratings">
+        <div className="about-rating-card">
+          <h1>10k</h1>
+          <p>Happy Families</p>
+        </div>
+        <div className="about-rating-card">
+          <h1>4.9*</h1>
+          <p>Reviews</p>
+        </div>
+        <div className="about-rating-card">
+          <h1>2021</h1>
+          <p>Year Founded</p>
+        </div>
+        <div className="about-rating-card">
+          <h1>30</h1>
+          <p>Day Return</p>
+        </div>
+      </div>
       <div className="about-container">
         <div className="about-page">
           <br />
-          <h2>The beginning</h2>
+          <h2>The Beginning</h2>
           <br />
           <p>Born from real-life experience as parents of two, our journey started with a simple but persistent
             frustration — shopping with a buggy should be easy, yet it rarely is. Limited storage, awkwardly balanced bags,
@@ -43,27 +61,53 @@ export default function About() {
           <p>Buggy Basket is more than an accessory — it’s a smarter way to move through daily life.
             Whether you're navigating supermarket aisles, walking through town, or managing a full day out, our
             basket keeps your shopping secure, accessible, and effortlessly within reach.</p>
-
         </div>
-        <br />
         <div className="about-image">
           <div className="image-placeholder">Image</div>
         </div>
       </div>
       <div className="about-why">
         <h2>Why Buggy Basket?</h2>
-        <ul className="about-list">
-          <li>Seamlessly attaches to buggy handles</li>
-          <li>Designed for shopping, groceries, and everyday essentials</li>
-          <li>Durable mesh construction with reinforced support</li>
-          <li>Compatible with most pushchairs, prams, and strollers</li>
-          <li>Lightweight, functional, and considered in every detail</li>
-          <li>Created by parents, designed for modern family life</li>
-        </ul>
+        <br />
+
+        <div className="about-details-grid">
+          <div className="about-card">
+            <h3>Seamlessly attaches to buggy handless</h3>
+          </div>
+          <div className="about-card">
+            <h3>Designed for shopping, groceries, and everyday essentials</h3>
+          </div>
+          <div className="about-card">
+            <h3>Durable mesh construction with reinforced support</h3>
+          </div>
+          <div className="about-card">
+            <h3>Compatible with most pushchairs, prams, and strollers</h3>
+          </div>
+          <div className="about-card">
+            <h3>Lightweight, functional, and considered in every detail</h3>
+          </div>
+          <div className="about-card">
+            <h3>Created by parents, designed for modern family life</h3>
+          </div>
+        </div>
       </div>
       <div className="about-banner">
-
+        <h3>Parents deserve products that are as <span className="about-alt-color">practical</span> as they are <span className="about-alt-color">
+          beautiful</span></h3>
+        <h2>-buggy basket team</h2>
       </div>
-    </div >
+      <div className="about-why">
+        <h1>Ready to find you perfect basket?</h1>
+        <p>Browse our full range of premium baskets, designed for modern families</p>
+        <div className="about-contact-grid">
+          <div className="about-contact-card">
+            <h2>Shop Now</h2>
+          </div>
+          <div className="about-card">
+            <h2>Contact Us</h2>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
