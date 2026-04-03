@@ -1348,7 +1348,7 @@ a {
   }
 
   .contact-details-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto auto;
     /* stack */
   }
 
