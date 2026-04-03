@@ -1174,6 +1174,14 @@ a {
   padding: 1rem;
 }
 
+.about-why {
+  padding: 2rem;
+}
+
+.about-why h2 {
+  text-align: center;
+}
+
 /*about page mobile*/
 
 @media (max-width: 768px) {
@@ -1189,9 +1197,11 @@ a {
   .about-banner h1 {
     width: 100%;
   }
-  .about-container{
+
+  .about-container {
     flex-direction: column-reverse
   }
+
   .about-page {
     line-height: 1.7rem;
   }
@@ -1199,6 +1209,8 @@ a {
   .about-image {
     position: static;
     width: 100%;
+    height: 100px;
     margin: 0 0 1.5rem 0;
   }
+
 }

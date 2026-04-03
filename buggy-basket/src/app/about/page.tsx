@@ -43,22 +43,26 @@ export default function About() {
           <p>Buggy Basket is more than an accessory — it’s a smarter way to move through daily life.
             Whether you're navigating supermarket aisles, walking through town, or managing a full day out, our
             basket keeps your shopping secure, accessible, and effortlessly within reach.</p>
-          <br />
-          <br />
-          <h2>Why Buggy Basket?</h2>
-          <ul className="about-list">
-            <li>Seamlessly attaches to buggy handles</li>
-            <li>Designed for shopping, groceries, and everyday essentials</li>
-            <li>Durable mesh construction with reinforced support</li>
-            <li>Compatible with most pushchairs, prams, and strollers</li>
-            <li>Lightweight, functional, and considered in every detail</li>
-            <li>Created by parents, designed for modern family life</li>
-          </ul>
+
         </div>
         <br />
         <div className="about-image">
           <div className="image-placeholder">Image</div>
         </div>
+      </div>
+      <div className="about-why">
+        <h2>Why Buggy Basket?</h2>
+        <ul className="about-list">
+          <li>Seamlessly attaches to buggy handles</li>
+          <li>Designed for shopping, groceries, and everyday essentials</li>
+          <li>Durable mesh construction with reinforced support</li>
+          <li>Compatible with most pushchairs, prams, and strollers</li>
+          <li>Lightweight, functional, and considered in every detail</li>
+          <li>Created by parents, designed for modern family life</li>
+        </ul>
+      </div>
+      <div className="about-banner">
+
       </div>
     </div >
   )
