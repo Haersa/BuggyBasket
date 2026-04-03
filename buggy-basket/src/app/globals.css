@@ -1347,9 +1347,4 @@ a {
     order: 2;
   }
 
-  .contact-details-grid {
-    grid-template-columns: auto auto;
-    /* stack */
-  }
-
 }
