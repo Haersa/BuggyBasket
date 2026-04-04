@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useBasket } from '../../context/BasketContext';
 import { toast } from 'react-toastify';
 import { ArrowLeft, ShoppingBasket, Tag, Ruler, Weight, Layers } from 'lucide-react';
+import Breadcrumb from '../../components/Breadcrumb';
 
 type Product = {
   id: number;
@@ -76,11 +77,13 @@ export default function ProductDetailPage() {
     <div className="product-detail-page">
       <div className="product-detail-container">
 
-        {/* Back link */}
-        <Link href="/shop" className="product-detail-back">
-          <ArrowLeft size={16} />
-          Back to Shop
-        </Link>
+        {/* Breadcrumb */}
+        <Breadcrumb items={[
+  { label: 'Home', href: '/' },
+  { label: 'Shop', href: '/shop' },
+  { label: product.name, href: `/shop/${product.id}` },
+]} />
+
 
         <div className="product-detail-layout">
 

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BasketProvider } from './context/BasketContext';
 import BasketModal from './components/BasketModal';
 import CookieBanner from './components/CookieBanner';
+import BackToTop from './components/BackToTop';
 
 export const metadata: Metadata = {
   title: "Buggy Basket",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             closeButton={false}    
             theme="light"
             />
+            <BackToTop />
         </BasketProvider>
         <CookieBanner />
       </body>

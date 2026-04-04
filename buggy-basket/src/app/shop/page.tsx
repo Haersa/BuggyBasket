@@ -6,6 +6,7 @@ import { SlidersHorizontal, X } from 'lucide-react';
 import { useBasket } from '../context/BasketContext';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
+import Breadcrumb from '../components/Breadcrumb';
 
 const CATEGORIES = ['All', 'Newborn', 'Toddler', 'Accessories'];
 const COLOURS = ['All', 'Black', 'Brown', 'Beige', 'Grey', 'Natural'];
@@ -219,6 +220,10 @@ export default function ShopPage() {
 
       {/* Main Content */}
       <div className="shop-main">
+      <Breadcrumb items={[
+  { label: 'Home', href: '/' },
+  { label: 'Shop', href: '/shop' },
+]} />
       <div className="shop-toolbar">
   <div className="shop-toolbar-left">
     <button className="shop-filter-btn" onClick={() => setSidebarOpen(true)}>

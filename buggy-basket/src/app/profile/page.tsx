@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { User, Lock, Bell, Trash2 } from 'lucide-react';
+import ConfirmModal from '../components/ConfirmModal';
 
 type UserData = {
   id: number;
@@ -19,6 +20,8 @@ const TABS = [
   { id: 'danger', label: 'Danger Zone', icon: Trash2 },
 ];
 
+
+
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('account');
   const [user, setUser] = useState<UserData | null>(null);
@@ -31,6 +34,7 @@ export default function ProfilePage() {
   const [newsletter, setNewsletter] = useState(false);
   const [deletePassword, setDeletePassword] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
 
@@ -269,35 +273,49 @@ export default function ProfilePage() {
               </div>
             )}
 
-            {/* Danger Zone Tab */}
-            {activeTab === 'danger' && (
-              <div className="profile-section">
-                <h2 className="profile-section-title danger-title">Danger Zone</h2>
-                <p className="profile-section-subtitle">Permanently delete your account and all associated data.</p>
-                <div className="profile-form">
-                  <div className="danger-box">
-                    <p className="danger-warning">This action is irreversible. All your data including your basket and order history will be permanently deleted.</p>
-                    <div className="modal-field">
-                      <label className="modal-label">Confirm Password</label>
-                      <input
-                        type="password"
-                        className="modal-input"
-                        placeholder="Enter Password"
-                        value={deletePassword}
-                        onChange={(e) => setDeletePassword(e.target.value)}
-                      />
-                    </div>
-                    <button
-                      className="profile-delete-btn"
-                      onClick={handleDeleteAccount}
-                      disabled={submitting}
-                    >
-                      {submitting ? 'Deleting...' : 'Delete My Account'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
+{/* Danger Zone Tab */}
+{activeTab === 'danger' && (
+  <div className="profile-section">
+    <h2 className="profile-section-title danger-title">Danger Zone</h2>
+    <p className="profile-section-subtitle">Permanently delete your account and all associated data.</p>
+    <div className="profile-form">
+      <div className="danger-box">
+        <p className="danger-warning">This action is irreversible. All your data including your basket and order history will be permanently deleted.</p>
+        <div className="modal-field">
+          <label className="modal-label">Confirm Password</label>
+          <input
+            type="password"
+            className="modal-input"
+            placeholder="Enter Password"
+            value={deletePassword}
+            onChange={(e) => setDeletePassword(e.target.value)}
+          />
+        </div>
+        <button
+          className="profile-delete-btn"
+          onClick={() => setShowConfirm(true)}
+          disabled={submitting}
+        >
+          {submitting ? 'Deleting...' : 'Delete My Account'}
+        </button>
+      </div>
+    </div>
+
+    {showConfirm && (
+      <ConfirmModal
+        title="Delete Account"
+        message="Are you sure you want to permanently delete your account? This action cannot be undone and all your data will be lost."
+        confirmText="Delete My Account"
+        danger
+        onCancel={() => setShowConfirm(false)}
+        onConfirm={() => {
+          setShowConfirm(false);
+          handleDeleteAccount();
+        }}
+      />
+    )}
+  </div>
+)}
 
           </div>
         </div>
