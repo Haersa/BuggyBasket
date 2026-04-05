@@ -1194,9 +1194,7 @@ a {
   flex: 1;
   margin: 0 0 1.5rem 1.5rem;
   padding-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  padding-right: 2rem;
 }
 
 .image-placeholder {
@@ -1208,6 +1206,7 @@ a {
   justify-content: center;
   background: var(--surface-hover);
   color: var(--text-light);
+  margin-bottom: 4rem;
 }
 
 .about-list {
