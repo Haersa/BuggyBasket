@@ -61,36 +61,24 @@ export default function About() {
           <p>Buggy Basket is more than an accessory — it’s a smarter way to move through daily life.
             Whether you're navigating supermarket aisles, walking through town, or managing a full day out, our
             basket keeps your shopping secure, accessible, and effortlessly within reach.</p>
+          <br />
+          <br />
+          <h2>Why Buggy Basket?</h2>
+          <ul className="about-list">
+            <li>Seamlessly attaches to buggy handles</li>
+            <li>Designed for shopping, groceries, and everyday essentials</li>
+            <li>Durable mesh construction with reinforced support</li>
+            <li>Compatible with most pushchairs, prams, and strollers</li>
+            <li>Lightweight, functional, and considered in every detail</li>
+            <li>Created by parents, designed for modern family life</li>
+          </ul>
         </div>
         <div className="about-image">
           <div className="image-placeholder">Image</div>
+          <div className="image-placeholder">Image</div>
         </div>
       </div>
-      <div className="about-why">
-        <h2>Why Buggy Basket?</h2>
-        <br />
 
-        <div className="about-details-grid">
-          <div className="about-card">
-            <h3>Seamlessly attaches to buggy handless</h3>
-          </div>
-          <div className="about-card">
-            <h3>Designed for shopping, groceries, and everyday essentials</h3>
-          </div>
-          <div className="about-card">
-            <h3>Durable mesh construction with reinforced support</h3>
-          </div>
-          <div className="about-card">
-            <h3>Compatible with most pushchairs, prams, and strollers</h3>
-          </div>
-          <div className="about-card">
-            <h3>Lightweight, functional, and considered in every detail</h3>
-          </div>
-          <div className="about-card">
-            <h3>Created by parents, designed for modern family life</h3>
-          </div>
-        </div>
-      </div>
       <div className="about-banner">
         <h3>Parents deserve products that are as <span className="about-alt-color">practical</span> as they are <span className="about-alt-color">
           beautiful</span></h3>
