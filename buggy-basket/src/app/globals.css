@@ -1245,6 +1245,10 @@ a {
   text-align: center;
 }
 
+.about-card h2 {
+  padding-top: 0.75rem;
+}
+
 .about-card h3 {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
@@ -1265,10 +1269,12 @@ a {
   background: var(--foreground);
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-contact-card h2 {
+  padding-top: 0.75rem;
   color: var(--background);
 }
 
