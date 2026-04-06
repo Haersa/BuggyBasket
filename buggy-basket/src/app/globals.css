@@ -1206,7 +1206,7 @@ a {
   justify-content: center;
   background: var(--surface-hover);
   color: var(--text-light);
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
 .about-list {
@@ -1219,12 +1219,11 @@ a {
 
 .about-why {
   padding: 2rem;
-  background: var(--surface-input);
+  background: var(--background);
 }
 
 .about-why h2,
 .about-why p {
-  text-align: center;
   padding-bottom: 1rem;
 }
 
@@ -1234,23 +1233,12 @@ a {
   font-family: var(--display-font);
 }
 
-.about-details-grid {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 200px 200px 200px;
-  gap: 1rem;
-}
-
 .about-card {
   padding: 1.25rem;
   background: var(--background);
   border: 1px solid var(--foreground);
   border-radius: 0.75rem;
   text-align: center;
-}
-
-.about-card h2 {
-  padding-top: 0.75rem;
 }
 
 .about-card h3 {
@@ -1264,7 +1252,7 @@ a {
 .about-contact-grid {
   display: grid;
   justify-content: center;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: 175px 175px;
   gap: 2rem;
 }
 
@@ -1273,13 +1261,23 @@ a {
   background: var(--foreground);
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
 
 .about-contact-card h2 {
-  padding-top: 0.75rem;
   color: var(--background);
+}
+
+.about-shop {
+  background: var(--surface-input);
+  text-align: center;
+}
+
+.about-shop h1,
+.about-shop p {
+  padding: 1rem;
 }
 
 
