@@ -1313,7 +1313,7 @@ a {
   font-size: 0.7rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.1em;
-  color: var(--main-blue);
+  color: var(--accent-yellow);
   text-transform: uppercase;
 }
 
