@@ -1313,7 +1313,7 @@ a {
   .about-image {
     position: static;
     width: 100%;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.5rem 1.5rem;
   }
 
   .image-placeholder {
