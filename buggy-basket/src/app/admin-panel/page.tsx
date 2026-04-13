@@ -14,13 +14,13 @@ export default function About() {
           <section className="admin-sidenav">
             <nav className="admin-nav">
               <ul>
-                <li><a href="/admin"><LayoutDashboard />Dashboard</a></li>
-                <li><a href="/admin/products"><PackageSearch />Manage Products</a></li>
+                <li><a href="/admin-panel"><LayoutDashboard />Dashboard</a></li>
+                <li><a href="/admin-panel/products"><PackageSearch />Manage Products</a></li>
                 <li><a href="/admin-panel/admin-add-new-product"><PackagePlus />Add Product</a></li>
-                <li><a href="/admin/analytics"><BadgePoundSterling />Sales Analytics</a></li>
-                <li><a href="/admin/manage-users"><UserRoundCog />Manage Users</a></li>
-                <li><a href="/admin/user-audit"><UserSearch />User Audit</a></li>
-                <li><a href="/admin/edit-log"><FileClock />Admin Edit Log</a></li>
+                <li><a href="/admin-panel/analytics"><BadgePoundSterling />Sales Analytics</a></li>
+                <li><a href="/admin-panel/manage-users"><UserRoundCog />Manage Users</a></li>
+                <li><a href="/admin-panel/user-audit"><UserSearch />User Audit</a></li>
+                <li><a href="/admin-panel/edit-log"><FileClock />Admin Edit Log</a></li>
               </ul>
             </nav>
           </section>

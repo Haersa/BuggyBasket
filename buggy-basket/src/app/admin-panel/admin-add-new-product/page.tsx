@@ -59,7 +59,7 @@ export default function AddNewProduct() {
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/products">
+                  <a href="/admin-panel/admin-manage-products">
                     <PackageSearch />
                     Manage Products
                   </a>
@@ -71,25 +71,25 @@ export default function AddNewProduct() {
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/analytics">
+                  <a href="/admin-panel/analytics">
                     <BadgePoundSterling />
                     Sales Analytics
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/manage-users">
+                  <a href="/admin-panel/manage-users">
                     <UserRoundCog />
                     Manage Users
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/user-audit">
+                  <a href="/admin-panel/user-audit">
                     <UserSearch />
                     User Audit
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/edit-log">
+                  <a href="/admin-panel/edit-log">
                     <FileClock />
                     Admin Edit Log
                   </a>
