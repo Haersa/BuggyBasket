@@ -2132,3 +2132,73 @@ a {
   background: var(--accent-yellow);
   color: var(--text-black);
 }
+
+
+
+
+.admin-users-table{
+  margin: 0 auto;
+  margin-top: 100px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.admin-users-table td,
+.admin-users-table th
+ {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+.admin-users-table tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.admin-users-table button {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background: white;
+  transition: 0.2s;
+}
+
+.admin-users-table button:hover {
+  background: #e0e0e0;
+}
+
+
+/*Header section for admin "users" panels*/
+.admin-users-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;           
+  margin-top: 20px;
+}
+
+/*Group of buttons*/
+.admin-users-actions {
+  display: flex;
+  gap: 10px;                     
+}
+
+
+.admin-users-button{
+  padding: 0.875rem;
+  background: var(--accent-yellow);
+  color: var(--text-black);
+  border: none;
+  border-radius: 0.375rem;
+  font-family: var(--display-font);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.admin-users-button:hover {
+  background: var(--text-black);
+  color: var(--accent-yellow);
+}

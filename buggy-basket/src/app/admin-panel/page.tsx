@@ -18,9 +18,9 @@ export default function About() {
                 <li><a href="/admin/products"><PackageSearch />Manage Products</a></li>
                 <li><a href="/admin-panel/admin-add-new-product"><PackagePlus />Add Product</a></li>
                 <li><a href="/admin/analytics"><BadgePoundSterling />Sales Analytics</a></li>
-                <li><a href="/admin/manage-users"><UserRoundCog />Manage Users</a></li>
-                <li><a href="/admin/user-audit"><UserSearch />User Audit</a></li>
-                <li><a href="/admin/edit-log"><FileClock />Admin Edit Log</a></li>
+                <li><a href="/admin-panel/admin-manage-users"><UserRoundCog />Manage Users</a></li>
+                <li><a href="/admin-panel/admin-user-audit"><UserSearch />User Audit</a></li>
+                <li><a href="/admin-panel/admin-edit-log"><FileClock />Admin Edit Log</a></li>
               </ul>
             </nav>
           </section>
@@ -51,13 +51,13 @@ export default function About() {
                 <h3>Users</h3>
                 <p>Manage user accounts and permissions.</p>
                 <ul className="button-grid">
-                  <a href="/admin/users">
+                  <a href="/admin-panel/admin-manage-users">
                     <li className="button-grid-important"><UserRoundCog />Manage Users</li>
                   </a>
-                  <a href="/admin/users/audit">
+                  <a href="/admin-panel/admin-user-audit">
                     <li><UserSearch />User Audit</li>
                   </a>
-                  <a href="/admin/edit-log">
+                  <a href="/admin-panel/admin-edit-log">
                     <li><FileClock />View Admin Edit Log</li>
                   </a>
                 </ul>
