@@ -1,13 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { PackageSearch } from "lucide-react";
-import { PackagePlus } from "lucide-react";
-import { BadgePoundSterling } from "lucide-react";
-import { UserRoundCog } from "lucide-react";
-import { UserSearch } from "lucide-react";
-import { FileClock } from "lucide-react";
-import { LayoutDashboard } from "lucide-react";
+import AdminSidebar from '../components/AdminSidebar';
 
 export default function AddNewProduct() {
   const [formData, setFormData] = useState({
@@ -49,54 +43,7 @@ export default function AddNewProduct() {
     <main>
       <div className="page">
         <div className="page-container">
-          <section className="admin-sidenav">
-            <nav className="admin-nav">
-              <ul>
-                <li>
-                  <a href="/admin-panel">
-                    <LayoutDashboard />
-                    Dashboard
-                  </a>
-                </li>
-                <li>
-                  <a href="/admin/products">
-                    <PackageSearch />
-                    Manage Products
-                  </a>
-                </li>
-                <li>
-                  <a href="/admin-panel/admin-add-new-product">
-                    <PackagePlus />
-                    Add Product
-                  </a>
-                </li>
-                <li>
-                  <a href="/admin/analytics">
-                    <BadgePoundSterling />
-                    Sales Analytics
-                  </a>
-                </li>
-                <li>
-                  <a href="/admin/manage-users">
-                    <UserRoundCog />
-                    Manage Users
-                  </a>
-                </li>
-                <li>
-                  <a href="/admin/user-audit">
-                    <UserSearch />
-                    User Audit
-                  </a>
-                </li>
-                <li>
-                  <a href="/admin/edit-log">
-                    <FileClock />
-                    Admin Edit Log
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </section>
+          <AdminSidebar />
           <section className="admin-panel">
             <section className="admin-content">
               <div className="admin-form">

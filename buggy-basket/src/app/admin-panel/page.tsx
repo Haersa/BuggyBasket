@@ -1,63 +1,46 @@
-import { PackageSearch } from "lucide-react";
-import { PackagePlus } from "lucide-react";
-import { BadgePoundSterling } from "lucide-react";
-import { UserRoundCog } from "lucide-react";
-import { UserSearch } from "lucide-react";
-import { FileClock } from "lucide-react";
-import { LayoutDashboard } from "lucide-react";
-export default function About() {
-  
+'use client';
+
+import AdminSidebar from './components/AdminSidebar';
+import { PackageSearch, PackagePlus, BadgePoundSterling, UserRoundCog, UserSearch, FileClock } from 'lucide-react';
+
+export default function AdminPanel() {
   return (
     <main>
       <div className="page">
         <div className="page-container">
-          <section className="admin-sidenav">
-            <nav className="admin-nav">
-              <ul>
-                <li><a href="/admin"><LayoutDashboard />Dashboard</a></li>
-                <li><a href="/admin/products"><PackageSearch />Manage Products</a></li>
-                <li><a href="/admin-panel/admin-add-new-product"><PackagePlus />Add Product</a></li>
-                <li><a href="/admin/analytics"><BadgePoundSterling />Sales Analytics</a></li>
-                <li><a href="/admin/manage-users"><UserRoundCog />Manage Users</a></li>
-                <li><a href="/admin/user-audit"><UserSearch />User Audit</a></li>
-                <li><a href="/admin/edit-log"><FileClock />Admin Edit Log</a></li>
-              </ul>
-            </nav>
-          </section>
+          <AdminSidebar />
           <section className="admin-panel">
             <h2>Admin Panel</h2>
-            <p>
-              Welcome to the admin panel. Here you can manage your application
-              settings and user accounts.
-            </p>
+            <p>Welcome to the admin panel. Here you can manage your application settings and user accounts.</p>
             <section className="admin-content">
               <div className="admin-content-sitecontent">
-                <h3>Site Content</h3>
-                <p>Manage site content and product information</p>
+                <div className="admin-content-sitecontent-header">
+                  <h3>Site Content</h3>
+                  <p>Manage site content and product information</p>
+                </div>
                 <ul className="button-grid">
-                  <a href="/admin/products">
-                    <li className="button-grid-important"><PackageSearch />Manage Products</li>
+                  <a href="/admin-panel/admin-manage-products">
+                    <li><PackageSearch />Manage Products</li>
                   </a>
                   <a href="/admin-panel/admin-add-new-product">
                     <li><PackagePlus />Add New Products</li>
-                  </a>
-                  <a href="/admin/analytics">
-                    <li><BadgePoundSterling />View Sales Analytics</li>
                   </a>
                 </ul>
               </div>
 
               <div className="admin-content-sitecontent">
-                <h3>Users</h3>
-                <p>Manage user accounts and permissions.</p>
+                <div className="admin-content-sitecontent-header">
+                  <h3>Users</h3>
+                  <p>Manage user accounts and permissions.</p>
+                </div>
                 <ul className="button-grid">
-                  <a href="/admin/users">
-                    <li className="button-grid-important"><UserRoundCog />Manage Users</li>
+                  <a href="/admin-panel/admin-manage-users">
+                    <li><UserRoundCog />Manage Users</li>
                   </a>
-                  <a href="/admin/users/audit">
+                  <a href="/admin-panel/admin-user-audit">
                     <li><UserSearch />User Audit</li>
                   </a>
-                  <a href="/admin/edit-log">
+                  <a href="/admin-panel/admin-edit-log">
                     <li><FileClock />View Admin Edit Log</li>
                   </a>
                 </ul>
