@@ -9,7 +9,7 @@ export default function Footer() {
 
         <div className="footer-brand">
           <span className="footer-logo">Buggy Basket</span>
-          <p className="footer-tagline">The smarter way to shop for baby.</p>
+          <p className="footer-tagline">The smarter way to shop.</p>
           <div className="footer-socials">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="footer-social-link">
               <Instagram size={18} />
