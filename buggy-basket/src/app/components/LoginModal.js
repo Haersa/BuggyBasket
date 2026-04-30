@@ -39,14 +39,15 @@ export default function LoginModal({ onClose, onSwitchToRegister, onLoginSuccess
       if (!res.ok) {
         toast.error(data.error || 'Something went wrong.');
       } else {
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('role', data.user.role);
-
         if (data.user.role === 'admin') {
+          sessionStorage.setItem('token', data.token);
+          sessionStorage.setItem('role', data.user.role);
           toast.success('Welcome back!');
           onClose();
           window.location.href = '/admin-panel';
         } else {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('role', data.user.role);
           toast.success('Welcome back!');
           onLoginSuccess();
           onClose();

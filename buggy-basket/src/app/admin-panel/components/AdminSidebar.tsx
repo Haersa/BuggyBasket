@@ -26,8 +26,8 @@ export default function AdminSidebar() {
   const pathname = usePathname();
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('role');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('role');
     localStorage.removeItem('guest_basket');
     toast.success('You have been logged out.');
     router.push('/');

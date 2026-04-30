@@ -17,10 +17,10 @@ export default function Navbar() {
   const profileRef = useRef(null);
   const { itemCount, setIsOpen } = useBasket();
   const router = useRouter();
-  
+
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const role = localStorage.getItem('role');
+const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+const role = localStorage.getItem('role') || sessionStorage.getItem('role');
     if (token) setIsLoggedIn(true);
     if (role === 'admin' && !window.location.pathname.startsWith('/admin')) {
       window.location.href = '/admin-panel';
