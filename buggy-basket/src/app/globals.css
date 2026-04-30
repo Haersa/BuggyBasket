@@ -3733,3 +3733,628 @@ a {
     padding: 3rem 1.5rem;
   }
 }
+
+/* Contact Page */
+
+/*about page mobile*/
+
+@media (max-width: 768px) {
+
+  .about-section,
+  .about-section.reverse {
+    flex-direction: column;
+  }
+
+  .about-text,
+  .about-image {
+    width: 100%;
+  }
+}
+
+/*contact page*/
+
+.contact-container {
+  padding: 3rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  text-align: center;
+  font-family: var(--display-font);
+  margin-bottom: 3rem;
+}
+
+.contact-section {
+  display: flex;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+/*map*/
+.contact-map {
+  flex: 1.5;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: var(--surface-hover);
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*contact info*/
+
+.contact-banner {
+  width: 100%;
+  height: 350px;
+  background-image: linear-gradient(to right, var(--foreground), var(--text-muted));
+}
+
+.contact-banner h1 {
+  font-family: var(--display-font);
+  color: var(--background);
+  padding: 1rem;
+  padding-left: 3rem;
+  font-size: 64px;
+  width: 40%;
+}
+
+.contact-banner p {
+  font-family: var(--body-font);
+  color: var(--text-faint);
+  width: 25%;
+  padding-left: 3rem;
+}
+
+.banner-text {
+  padding-top: 2rem;
+  padding-left: 3rem;
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.1em;
+  color: var(--accent-yellow);
+  text-transform: uppercase;
+}
+
+.banner-span {
+  color: var(--main-blue);
+}
+
+.contact-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info {
+  padding: 1.5rem;
+  border: 1 solid var(--border-color);
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.contact-form h2 {
+  font-family: var(--display-font);
+}
+
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-card {
+  padding: 1.25rem;
+  background: var(--surface-input);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.contact-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0.5rem;
+  color: var(--text-black);
+}
+
+.modal-text {
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.1em;
+  color: var(--accent-yellow);
+  text-transform: uppercase;
+}
+
+
+/*contact-mobile*/
+
+@media (max-width: 768px) {
+  .contact-banner h2 {
+    padding: 1rem;
+  }
+
+  .contact-banner h1 {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .contact-banner p {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .contact-section {
+    flex-direction: column;
+  }
+
+  .contact-map {
+    order: 1;
+  }
+
+  .contact-page {
+    order: 2;
+  }
+
+}
+
+
+/* Policy Page Styles */
+
+/* ── Policy Pages ── */
+.policy-page {
+  min-height: calc(100vh - 4rem);
+  background: var(--surface-hover);
+  padding: 3rem 2.5rem;
+}
+
+.policy-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.policy-header {
+  margin-bottom: 2rem;
+}
+
+.policy-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  font-family: var(--body-font);
+}
+
+.policy-breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.policy-breadcrumb a:hover {
+  color: var(--text-black);
+}
+
+.policy-breadcrumb span {
+  color: var(--text-light);
+}
+
+.policy-title {
+  font-family: var(--display-font);
+  font-size: 2.25rem;
+  color: var(--text-black);
+  margin-bottom: 0.5rem;
+}
+
+.policy-updated {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Warning banner */
+.policy-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  background: #fff8e1;
+  border: 1px solid #f5c800;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: #7a5c00;
+  line-height: 1.6;
+  font-family: var(--body-font);
+}
+
+.policy-warning-label {
+  font-weight: 700;
+  white-space: nowrap;
+  color: #7a5c00;
+}
+
+/* Layout */
+.policy-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* Table of contents */
+.policy-toc {
+  position: sticky;
+  top: 5rem;
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+}
+
+.policy-toc-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.875rem;
+  font-family: var(--body-font);
+}
+
+.policy-toc-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.policy-toc-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.375rem 0.625rem;
+  border-radius: 0.25rem;
+  transition: background 0.15s, color 0.15s;
+  font-family: var(--body-font);
+  line-height: 1.4;
+}
+
+.policy-toc-link:hover {
+  background: var(--surface-hover);
+  color: var(--text-black);
+}
+
+/* Content */
+.policy-content {
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.policy-section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.policy-section:first-child {
+  padding-top: 0;
+}
+
+.policy-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.policy-section-title {
+  font-family: var(--display-font);
+  font-size: 1.25rem;
+  color: var(--text-black);
+  margin-bottom: 1.25rem;
+}
+
+.policy-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: var(--body-font);
+}
+
+.policy-section-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+.policy-section-content ul {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.policy-section-content ul li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.policy-section-content a {
+  color: var(--text-black);
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+
+.policy-section-content a:hover {
+  color: var(--text-muted);
+}
+
+.policy-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-black);
+  font-family: var(--body-font);
+  margin-top: 0.5rem;
+}
+
+.policy-subheading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-black);
+  font-family: var(--body-font);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .policy-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-toc {
+    position: static;
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .policy-page {
+    padding: 2rem 1.25rem;
+  }
+
+  .policy-content {
+    padding: 1.5rem;
+  }
+
+  .policy-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* ── Password Recovery ── */
+.password-recovery-page {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  min-height: calc(100vh - 4rem);
+  background: var(--surface-hover);
+}
+
+.password-recovery-inner {
+  width: 100%;
+  max-width: 420px;
+}
+
+.password-recovery-intro {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.password-recovery-title {
+  font-family: var(--display-font);
+  font-size: 1.75rem;
+  color: var(--text-black);
+  margin-bottom: 0.5rem;
+}
+
+.password-recovery-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.password-recovery-note {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+
+/* Admin Panel Styles */
+
+/* Admin Panel */
+.admin-panel {
+  padding: 4rem 2.5rem;
+  background: var(--background);
+  margin-left: 18rem;
+  
+}
+
+.admin-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+  
+}
+
+.admin-content-sitecontent ul{
+  list-style-type: none;
+
+  
+
+  
+}
+
+.admin-content-sitecontent a{
+  display: block;
+  padding: 1rem 0;
+  border-radius: 0.375rem;
+  color: var(--text-black);
+  font-weight: 600;
+  transition: background 0.15s;
+  
+}
+/* Admin Dashboard Buttons */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 150px); 
+  gap: 3rem;
+
+}
+
+.product-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-product-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem ;
+}
+
+
+.button-grid li {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--background);
+  border: var(--accent-yellow) 5px solid;
+  border-radius: 20px;
+  color: var(--text-black);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.button-grid li svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.button-grid li.button-grid-important {
+  background: var(--accent-yellow);
+}
+
+
+.button-grid li:hover {
+  transform: translateY(-3px);
+}
+
+.button-grid li:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Admin Forms */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+}
+
+/* Admin Products List */
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.product-item {
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Admin Side Nav */
+.admin-sidenav {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  width: 18rem;
+  height: calc(100vh - 4rem);
+  background: var(--foreground);
+  border-right: 1px solid var(--border-color);
+  color: var(--background);
+  padding: 2rem 1.5rem;
+}
+
+.admin-sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidenav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  color: var(--background);
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.admin-nav ul li a{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+
+.admin-sidenav a:hover {
+  background: var(--accent-yellow);
+  color: var(--text-black);
+}

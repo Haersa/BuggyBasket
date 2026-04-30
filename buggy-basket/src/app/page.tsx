@@ -47,7 +47,7 @@ export default function Home() {
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="hero-eyebrow">New Collection 2026</p>
-          <h1 className="hero-title">For your baby&apos;s needs.</h1>
+          <h1 className="hero-title">For your storage needs.</h1>
           <p className="hero-subtitle">Premium pram baskets designed for modern families. Built to last, styled to impress.</p>
           <div className="hero-actions">
             <Link href="/shop" className="hero-btn-primary">Shop Now</Link>
