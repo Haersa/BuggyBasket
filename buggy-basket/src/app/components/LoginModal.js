@@ -40,9 +40,17 @@ export default function LoginModal({ onClose, onSwitchToRegister, onLoginSuccess
         toast.error(data.error || 'Something went wrong.');
       } else {
         localStorage.setItem('token', data.token);
-        toast.success('Welcome back!');
-        onLoginSuccess();
-        onClose();
+        localStorage.setItem('role', data.user.role);
+
+        if (data.user.role === 'admin') {
+          toast.success('Welcome back!');
+          onClose();
+          window.location.href = '/admin-panel';
+        } else {
+          toast.success('Welcome back!');
+          onLoginSuccess();
+          onClose();
+        }
       }
     } catch (err) {
       toast.error('Network error. Please try again.');

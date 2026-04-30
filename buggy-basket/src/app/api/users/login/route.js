@@ -10,21 +10,21 @@ export async function POST(request) {
   const user = db.prepare('SELECT * FROM users WHERE email = ?').get(email);
 
   if (!user) {
-    return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
+    return NextResponse.json({ error: 'Invalid email or password.' }, { status: 401 });
   }
 
   // Compare the password against the stored hash
   const passwordMatch = await bcrypt.compare(password, user.password);
 
   if (!passwordMatch) {
-    return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
+    return NextResponse.json({ error: 'Invalid email or password.' }, { status: 401 });
   }
 
-  // Generate JWT token
+  // Generate JWT token including role
   const token = jwt.sign(
-    { id: user.id, email: user.email },
+    { id: user.id, email: user.email, role: user.role },
     process.env.JWT_SECRET,
-    { expiresIn: '4d' } // stores user login session for 4 days
+    { expiresIn: '4d' }
   );
 
   return NextResponse.json({
@@ -32,6 +32,7 @@ export async function POST(request) {
     user: {
       id: user.id,
       email: user.email,
+      role: user.role,
       created_at: user.created_at
     }
   });

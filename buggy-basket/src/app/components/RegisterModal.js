@@ -69,6 +69,7 @@ export default function RegisterModal({ onClose, onSwitchToLogin, onLoginSuccess
 
       if (loginRes.ok) {
         localStorage.setItem('token', loginData.token);
+        localStorage.setItem('role', loginData.user.role);
         toast.success('Welcome to Buggy Basket!');
         onLoginSuccess();
         onClose();

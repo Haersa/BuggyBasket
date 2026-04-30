@@ -1,17 +1,15 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import type { Metadata } from 'next';
+import './globals.css';
+import Shell from './components/Shell';
+import { BasketProvider } from './context/BasketContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BasketProvider } from './context/BasketContext';
-import BasketModal from './components/BasketModal';
-import CookieBanner from './components/CookieBanner';
 import BackToTop from './components/BackToTop';
+import CookieBanner from './components/CookieBanner';
 
 export const metadata: Metadata = {
-  title: "Buggy Basket",
-  description: "Buggy Basket's website",
+  title: 'Buggy Basket',
+  description: 'The smarter way to shop.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -19,22 +17,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <BasketProvider>
-          <Navbar />
-          {children}
-          <BasketModal />
-          <Footer />
+          <Shell>
+            {children}
+          </Shell>
+          <BackToTop />
+          <CookieBanner />
           <ToastContainer
             position="top-center"
             autoClose={3000}
             hideProgressBar={false}
-            draggable={false}
-            pauseOnHover={false}
-            closeButton={false}    
+            closeOnClick
+            pauseOnHover
+            draggable
             theme="light"
-            />
-            <BackToTop />
+          />
         </BasketProvider>
-        <CookieBanner />
       </body>
     </html>
   );

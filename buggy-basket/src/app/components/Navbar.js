@@ -16,10 +16,15 @@ export default function Navbar() {
   const [profileOpen, setProfileOpen] = useState(false);
   const profileRef = useRef(null);
   const { itemCount, setIsOpen } = useBasket();
-
+  const router = useRouter();
+  
   useEffect(() => {
     const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
     if (token) setIsLoggedIn(true);
+    if (role === 'admin' && !window.location.pathname.startsWith('/admin')) {
+      window.location.href = '/admin-panel';
+    }
   }, []);
 
   useEffect(() => {
@@ -32,19 +37,16 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
-  const router = useRouter();
-
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('guest_basket');
+    localStorage.removeItem('role');
     setIsLoggedIn(false);
     setProfileOpen(false);
     setMenuOpen(false);
     toast.success('You have been logged out.');
     router.push('/');
   };
-
-  
 
   return (
     <>
