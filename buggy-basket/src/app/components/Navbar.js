@@ -19,12 +19,16 @@ export default function Navbar() {
   const router = useRouter();
 
   useEffect(() => {
-const token = localStorage.getItem('token') || sessionStorage.getItem('token');
-const role = localStorage.getItem('role') || sessionStorage.getItem('role');
-    if (token) setIsLoggedIn(true);
-    if (role === 'admin' && !window.location.pathname.startsWith('/admin')) {
-      window.location.href = '/admin-panel';
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
+
+    if (token && role === 'admin' && !sessionStorage.getItem('session_alive')) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('role');
+      return;
     }
+
+    if (token) setIsLoggedIn(true);
   }, []);
 
   useEffect(() => {

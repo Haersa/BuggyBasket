@@ -32,7 +32,6 @@ export function BasketProvider({ children }) {
       setItems(getGuestBasket());
       return;
     }
-
     try {
       const res = await fetch('/api/basket', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -53,7 +52,6 @@ export function BasketProvider({ children }) {
   const mergeGuestBasket = useCallback(async () => {
     const guestItems = getGuestBasket();
     if (guestItems.length === 0) return;
-
     const token = localStorage.getItem('token');
     for (const item of guestItems) {
       await fetch('/api/basket', {
@@ -65,7 +63,6 @@ export function BasketProvider({ children }) {
         body: JSON.stringify({ product_id: item.product_id, quantity: item.quantity }),
       });
     }
-
     localStorage.removeItem(GUEST_BASKET_KEY);
     await fetchBasket();
   }, [fetchBasket]);
@@ -90,7 +87,6 @@ export function BasketProvider({ children }) {
       setItems([...guestBasket]);
       return true;
     }
-
     const res = await fetch('/api/basket', {
       method: 'POST',
       headers: {
@@ -99,11 +95,7 @@ export function BasketProvider({ children }) {
       },
       body: JSON.stringify({ product_id, quantity }),
     });
-
-    if (res.ok) {
-      await fetchBasket();
-      return true;
-    }
+    if (res.ok) { await fetchBasket(); return true; }
     return false;
   };
 
@@ -114,12 +106,10 @@ export function BasketProvider({ children }) {
       setItems(guestBasket);
       return;
     }
-
     const res = await fetch(`/api/basket/item?itemId=${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
-
     if (res.ok) await fetchBasket();
   };
 
@@ -132,7 +122,6 @@ export function BasketProvider({ children }) {
       setItems(guestBasket);
       return;
     }
-
     const res = await fetch(`/api/basket/item?itemId=${id}`, {
       method: 'PUT',
       headers: {
@@ -141,7 +130,6 @@ export function BasketProvider({ children }) {
       },
       body: JSON.stringify({ quantity }),
     });
-
     if (res.ok) await fetchBasket();
   };
 
@@ -151,12 +139,10 @@ export function BasketProvider({ children }) {
       setItems([]);
       return;
     }
-
     const res = await fetch('/api/basket', {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
-
     if (res.ok) setItems([]);
   };
 

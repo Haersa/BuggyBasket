@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import BasketModal from './BasketModal';
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -11,6 +12,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   return (
     <>
       {!isAdmin && <Navbar />}
+      {!isAdmin && <BasketModal />}
       {children}
       {!isAdmin && <Footer />}
     </>
