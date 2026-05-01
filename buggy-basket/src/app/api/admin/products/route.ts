@@ -44,4 +44,15 @@ export async function POST(req: NextRequest) {
     console.error(error);
     return NextResponse.json({ error: 'Failed to add product.' }, { status: 500 });
   }
+
+  
 }
+
+export async function GET() {
+    try {
+      const products = db.prepare('SELECT * FROM products').all();
+      return NextResponse.json(products);
+    } catch (error) {
+      return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 });
+    }
+  }

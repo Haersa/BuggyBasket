@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Truck, RotateCcw, ShieldCheck, Star } from 'lucide-react';
@@ -97,30 +98,38 @@ export default function Home() {
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>
-            <Link href={`/shop/${product.id}`} className="product-card">
-              <div className="product-card-image">
-                {product.out_of_stock ? (
-                  <span className="product-card-tag" style={{ background: 'var(--error)', color: '#fff' }}>Out of Stock</span>
-                ) : null}
-              </div>
-              <div className="product-card-body">
-                <h3 className="product-card-name">{product.name}</h3>
-                <div className="product-card-footer">
-                  <span className="product-card-price">£{product.price.toFixed(2)}</span>
-                  <button
-                    className="product-card-btn"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleAddToBasket(product);
-                    }}
-                    disabled={!!product.out_of_stock}
-                  >
-                    {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
-                  </button>
+              <Link href={`/shop/${product.id}`} className="product-card">
+                <div className="product-card-image">
+                  {product.image_url && (
+                    <Image
+                      src={product.image_url}
+                      alt={product.name}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  )}
+                  {product.out_of_stock ? (
+                    <span className="product-card-tag" style={{ background: 'var(--error)', color: '#fff' }}>Out of Stock</span>
+                  ) : null}
                 </div>
-              </div>
-            </Link>
-          </SwiperSlide>
+                <div className="product-card-body">
+                  <h3 className="product-card-name">{product.name}</h3>
+                  <div className="product-card-footer">
+                    <span className="product-card-price">£{product.price.toFixed(2)}</span>
+                    <button
+                      className="product-card-btn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleAddToBasket(product);
+                      }}
+                      disabled={!!product.out_of_stock}
+                    >
+                      {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
+                    </button>
+                  </div>
+                </div>
+              </Link>
+            </SwiperSlide>
           ))}
         </Swiper>
       </section>

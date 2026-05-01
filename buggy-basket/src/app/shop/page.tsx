@@ -6,6 +6,7 @@ import { SlidersHorizontal, X } from 'lucide-react';
 import { useBasket } from '../context/BasketContext';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
+import Image from 'next/image';
 import Breadcrumb from '../components/Breadcrumb';
 
 const CATEGORIES = ['All', 'Newborn', 'Toddler', 'Accessories'];
@@ -130,12 +131,10 @@ export default function ShopPage() {
   return (
     <div className="shop-page">
 
-      {/* Mobile filter overlay */}
       {sidebarOpen && (
         <div className="shop-sidebar-overlay" onClick={() => setSidebarOpen(false)} />
       )}
 
-      {/* Sidebar */}
       <aside className={`shop-sidebar ${sidebarOpen ? 'shop-sidebar-open' : ''}`}>
         <div className="shop-sidebar-header">
           <h2 className="shop-sidebar-title">Filters</h2>
@@ -151,102 +150,97 @@ export default function ShopPage() {
           </div>
         </div>
 
-        {/* Price Range */}
-<div className="shop-filter-section">
-  <h3 className="shop-filter-label">Price Range</h3>
-  <div className="shop-price-range">
-    <input
-      type="number"
-      placeholder="£0"
-      className="shop-price-input"
-      value={filters.minPrice}
-      onChange={(e) => setFilters({ ...filters, minPrice: e.target.value })}
-    />
-    <span className="shop-price-separator">—</span>
-    <input
-      type="number"
-      placeholder="£500"
-      className="shop-price-input"
-      value={filters.maxPrice}
-      onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
-    />
-  </div>
-</div>
+        <div className="shop-filter-section">
+          <h3 className="shop-filter-label">Price Range</h3>
+          <div className="shop-price-range">
+            <input
+              type="number"
+              placeholder="£0"
+              className="shop-price-input"
+              value={filters.minPrice}
+              onChange={(e) => setFilters({ ...filters, minPrice: e.target.value })}
+            />
+            <span className="shop-price-separator">—</span>
+            <input
+              type="number"
+              placeholder="£500"
+              className="shop-price-input"
+              value={filters.maxPrice}
+              onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
+            />
+          </div>
+        </div>
 
-{/* Category */}
-<div className="shop-filter-section">
-  <h3 className="shop-filter-label">Category</h3>
-  <div className="shop-filter-options">
-    {CATEGORIES.map((cat) => (
-      <button
-        key={cat}
-        className={`shop-filter-option ${filters.category === cat ? 'active' : ''}`}
-        onClick={() => setFilters({ ...filters, category: cat })}
-      >
-        {cat}
-      </button>
-    ))}
-  </div>
-</div>
+        <div className="shop-filter-section">
+          <h3 className="shop-filter-label">Category</h3>
+          <div className="shop-filter-options">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                className={`shop-filter-option ${filters.category === cat ? 'active' : ''}`}
+                onClick={() => setFilters({ ...filters, category: cat })}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
 
-{/* Colour */}
-<div className="shop-filter-section">
-  <h3 className="shop-filter-label">Colour</h3>
-  <div className="shop-filter-options">
-    {COLOURS.map((colour) => (
-      <button
-        key={colour}
-        className={`shop-filter-option ${filters.colour === colour ? 'active' : ''}`}
-        onClick={() => setFilters({ ...filters, colour: colour })}
-      >
-        {colour}
-      </button>
-    ))}
-  </div>
-</div>
+        <div className="shop-filter-section">
+          <h3 className="shop-filter-label">Colour</h3>
+          <div className="shop-filter-options">
+            {COLOURS.map((colour) => (
+              <button
+                key={colour}
+                className={`shop-filter-option ${filters.colour === colour ? 'active' : ''}`}
+                onClick={() => setFilters({ ...filters, colour: colour })}
+              >
+                {colour}
+              </button>
+            ))}
+          </div>
+        </div>
 
-{/* In Stock */}
-<div className="shop-filter-section">
-  <label className="shop-filter-toggle">
-    <input
-      type="checkbox"
-      checked={filters.inStockOnly}
-      onChange={(e) => setFilters({ ...filters, inStockOnly: e.target.checked })}
-    />
-    <span>In stock only</span>
-  </label>
-</div>
+        <div className="shop-filter-section">
+          <label className="shop-filter-toggle">
+            <input
+              type="checkbox"
+              checked={filters.inStockOnly}
+              onChange={(e) => setFilters({ ...filters, inStockOnly: e.target.checked })}
+            />
+            <span>In stock only</span>
+          </label>
+        </div>
       </aside>
 
-      {/* Main Content */}
       <div className="shop-main">
-      <Breadcrumb items={[
-  { label: 'Home', href: '/' },
-  { label: 'Shop', href: '/shop' },
-]} />
-      <div className="shop-toolbar">
-  <div className="shop-toolbar-left">
-    <button className="shop-filter-btn" onClick={() => setSidebarOpen(true)}>
-      <SlidersHorizontal size={16} />
-      Filters
-      {activeFilterCount > 0 && (
-        <span className="shop-filter-count">{activeFilterCount}</span>
-      )}
-    </button>
-    <p className="shop-results-count">{filtered.length} products</p>
-  </div>
-  <div className="shop-toolbar-right">
-    <select
-      className="shop-sort-select"
-      value={filters.sort}
-      onChange={(e) => setFilters({ ...filters, sort: e.target.value })}
-    >
-      {SORT_OPTIONS.map((opt) => (
-        <option key={opt.value} value={opt.value}>{opt.label}</option>
-      ))}
-    </select>
-  </div>
-</div>
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Shop', href: '/shop' },
+        ]} />
+        <div className="shop-toolbar">
+          <div className="shop-toolbar-left">
+            <button className="shop-filter-btn" onClick={() => setSidebarOpen(true)}>
+              <SlidersHorizontal size={16} />
+              Filters
+              {activeFilterCount > 0 && (
+                <span className="shop-filter-count">{activeFilterCount}</span>
+              )}
+            </button>
+            <p className="shop-results-count">{filtered.length} products</p>
+          </div>
+          <div className="shop-toolbar-right">
+            <select
+              className="shop-sort-select"
+              value={filters.sort}
+              onChange={(e) => setFilters({ ...filters, sort: e.target.value })}
+            >
+              {SORT_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+          </div>
+        </div>
 
         {filtered.length === 0 ? (
           <div className="shop-empty">
@@ -257,33 +251,41 @@ export default function ShopPage() {
           <div className="shop-grid">
             {filtered.map((product) => (
               <Link href={`/shop/${product.id}`} key={product.id} className="product-card">
-  <div className="product-card-image">
-    {product.out_of_stock ? (
-      <span className="product-card-tag" style={{ background: 'var(--error)', color: '#fff' }}>Out of Stock</span>
-    ) : product.featured ? (
-      <span className="product-card-tag">Featured</span>
-    ) : null}
-  </div>
-  <div className="product-card-body">
-    <h3 className="product-card-name">{product.name}</h3>
-    {product.colour && (
-      <p className="product-card-colour">{product.colour}</p>
-    )}
-    <div className="product-card-footer">
-      <span className="product-card-price">£{product.price.toFixed(2)}</span>
-      <button
-        className="product-card-btn"
-        onClick={(e) => {
-          e.preventDefault();
-          handleAddToBasket(product);
-        }}
-        disabled={!!product.out_of_stock}
-      >
-        {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
-      </button>
-    </div>
-  </div>
-</Link>
+                <div className="product-card-image">
+                  {product.image_url && (
+                    <Image
+                      src={product.image_url}
+                      alt={product.name}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  )}
+                  {product.out_of_stock ? (
+                    <span className="product-card-tag" style={{ background: 'var(--error)', color: '#fff' }}>Out of Stock</span>
+                  ) : product.featured ? (
+                    <span className="product-card-tag">Featured</span>
+                  ) : null}
+                </div>
+                <div className="product-card-body">
+                  <h3 className="product-card-name">{product.name}</h3>
+                  {product.colour && (
+                    <p className="product-card-colour">{product.colour}</p>
+                  )}
+                  <div className="product-card-footer">
+                    <span className="product-card-price">£{product.price.toFixed(2)}</span>
+                    <button
+                      className="product-card-btn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleAddToBasket(product);
+                      }}
+                      disabled={!!product.out_of_stock}
+                    >
+                      {product.out_of_stock ? 'Out of Stock' : 'Add to Basket'}
+                    </button>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         )}

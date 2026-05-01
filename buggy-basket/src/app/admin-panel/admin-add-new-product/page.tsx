@@ -168,11 +168,11 @@ export default function AddNewProduct() {
                         required
                       >
                         <option value="">Select a colour</option>
-                        <option value="black">Black</option>
-                        <option value="brown">Brown</option>
-                        <option value="beige">Beige</option>
-                        <option value="grey">Grey</option>
-                        <option value="natural">Natural</option>
+                        <option value="Black">Black</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Grey">Grey</option>
+                        <option value="Natural">Natural</option>
                       </select>
                     </div>
                   </div>
