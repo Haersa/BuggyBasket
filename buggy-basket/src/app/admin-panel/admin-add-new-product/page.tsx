@@ -83,7 +83,7 @@ export default function AddNewProduct() {
         <div className="page-container">
           <AdminSidebar />
           <section className="admin-panel">
-            <section className="admin-content">
+            <section className="admin-add-product-layout">
               <div className="admin-add-product">
                 <h2>Add a New Product</h2>
                 <form onSubmit={handleSubmit} className="admin-product-form">
