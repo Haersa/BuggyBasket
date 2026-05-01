@@ -10,12 +10,13 @@ db.exec(`
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 
-  CREATE TABLE IF NOT EXISTS products (
+CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT,
     price REAL NOT NULL,
     category TEXT,
+    colour TEXT,
     image_url TEXT,
     quantity INTEGER DEFAULT 0,
     featured INTEGER DEFAULT 0,
