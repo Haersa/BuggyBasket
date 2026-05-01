@@ -5023,3 +5023,28 @@ a {
   padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
 }
+
+.admin-newsletter-count {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-family: var(--body-font);
+}
+
+.admin-newsletter-badge {
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-newsletter-badge-account {
+  background: rgba(180, 225, 255, 0.3);
+  color: #1a6a9a;
+}
+
+.admin-newsletter-badge-newsletter {
+  background: rgba(240, 200, 8, 0.2);
+  color: #8a6e00;
+}

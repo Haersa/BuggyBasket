@@ -12,6 +12,52 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+function NewsletterForm() {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        toast.success('Thanks for subscribing!');
+        setEmail('');
+      } else {
+        toast.error(data.error || 'Something went wrong.');
+      }
+    } catch {
+      toast.error('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <form className="newsletter-form" onSubmit={handleSubmit}>
+      <input
+        type="email"
+        placeholder="Enter your email address"
+        className="newsletter-input"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <button type="submit" className="newsletter-btn" disabled={loading}>
+        {loading ? 'Subscribing...' : 'Subscribe'}
+      </button>
+    </form>
+  );
+}
 
 export default function Home() {
   const { addItem } = useBasket();
@@ -240,15 +286,7 @@ export default function Home() {
           <p className="newsletter-eyebrow">Stay in the loop</p>
           <h2 className="newsletter-title">Get exclusive deals &amp; updates</h2>
           <p className="newsletter-text">Join thousands of families who get our latest products, offers and parenting tips straight to their inbox.</p>
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="newsletter-input"
-              required
-            />
-            <button type="submit" className="newsletter-btn">Subscribe</button>
-          </form>
+          <NewsletterForm />
           <p className="newsletter-disclaimer">No spam, ever. Unsubscribe at any time.</p>
         </div>
       </section>

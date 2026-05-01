@@ -7,7 +7,8 @@ import {
   UserRoundCog, 
   UserSearch, 
   FileClock, 
-  LayoutDashboard, 
+  LayoutDashboard,
+  Mail,
   LogOut 
 } from 'lucide-react';
 import { toast } from 'react-toastify';
@@ -19,6 +20,7 @@ const navLinks = [
   { href: '/admin-panel/admin-manage-users', label: 'Manage Users', icon: <UserRoundCog /> },
   { href: '/admin-panel/admin-user-audit', label: 'User Audit', icon: <UserSearch /> },
   { href: '/admin-panel/admin-edit-log', label: 'Admin Edit Log', icon: <FileClock /> },
+  { href: '/admin-panel/admin-newsletter', label: 'Newsletter', icon: <Mail /> }
 ];
 
 export default function AdminSidebar() {
