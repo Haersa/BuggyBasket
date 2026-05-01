@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import db from '@/lib/db';
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { role, newsletter } = await req.json();
-  const { id } = params;
+  const { id } = await params;
 
   try {
     db.prepare(`UPDATE users SET role = ?, newsletter = ? WHERE id = ?`)
@@ -14,8 +14,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   }
 }
 
-export async function DELETE(_: NextRequest, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function DELETE(_: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
   try {
     db.prepare(`DELETE FROM basket WHERE user_id = ?`).run(id);
